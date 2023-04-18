@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -9,6 +10,7 @@ const Index = () => {
         <meta name="description" content="行間への憧れ" />
       </Head>
       <main>
+        <Header />
         iorin.io
       </main>
     </div>
