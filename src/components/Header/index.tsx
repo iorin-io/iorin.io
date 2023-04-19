@@ -4,6 +4,13 @@ import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import { Style } from '@material-ui/icons';
 
+const Blank = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+`
 const StyledHeader = styled.header`
   position: fixed;
   top: 0;
@@ -36,6 +43,7 @@ const StyledA = styled.a`
 const Header = () => {
 
   return (
+    <Blank>
     <StyledHeader>
       iorin.io
       <StyledDiv>
@@ -50,6 +58,7 @@ const Header = () => {
           </StyledP>
       </StyledDiv>
     </StyledHeader>
+    </Blank>
   );
 }
 
