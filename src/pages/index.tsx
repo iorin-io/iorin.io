@@ -8,10 +8,10 @@ import Image from 'next/image'
 const Hdiv = styled.div`
   display: flex;
   position: sticky;
-  bottom: 50px;
+  bottom: 0px;
   background-color: white;
   width: 100%;
-  height: 100%;
+  height: 300px;
 `;
 const ImageDiv = styled.div`
 `
