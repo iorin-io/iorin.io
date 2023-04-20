@@ -8,5 +8,3 @@ const TopPhoto: React.FC = () => (
     height={2000}
     alt="" />
 )
-
-export default TopPhoto;
