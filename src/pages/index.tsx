@@ -33,7 +33,9 @@ const Index = () => {
             layout={"intrinsic"}
             width={1500}
             height={1000}
-            alt="" />
+            loading={'eager'}
+            quality={75}
+            alt="sakura" />
         </ImageDiv>
         <Hdiv>
           <Pages />
