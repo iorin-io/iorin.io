@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Works from '@/contents/Works';
 import Pages from '@/contents/Pages';
 import Image from 'next/image'
+import TopPhoto from '@/components/Photo';
 
 const Hdiv = styled.div`
   display: flex;
@@ -28,12 +29,7 @@ const Index = () => {
           <Header />
         </div>
         <ImageDiv>
-          <Image
-            src="/photo/IMG_1910.jpg"
-            layout={"intrinsic"}
-            width={1500}
-            height={1000}
-            alt="" />
+          <TopPhoto />
         </ImageDiv>
         <Hdiv>
           <Pages />
