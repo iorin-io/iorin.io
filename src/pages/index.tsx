@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Works from '@/contents/Works';
 import Pages from '@/contents/Pages';
 import Image from 'next/image'
-import TopPhoto from '@/components/Photo';
+import TopPhoto from '@/components/Sakura2';
 
 const Hdiv = styled.div`
   display: flex;
