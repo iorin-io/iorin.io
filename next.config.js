@@ -8,6 +8,6 @@ module.exports = {
   reactStrictMode: true,
   images: {
       domains: ["iorin.io"],
-      formats: ["image/jpg"],
+      formats: ["image/webp"],
   },
 };
