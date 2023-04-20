@@ -9,16 +9,16 @@ const Blank = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 20px;
 `
 const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 45px;
   z-index: 999;
-  background-color: #C6C6C6;
+  background-color: #97AAAB;
   font-size: 30px;
   color: white;
   padding-left: 50px;
@@ -44,9 +44,9 @@ const Header = () => {
 
   return (
     <Blank>
-    <StyledHeader>
-      iorin.io
-      <StyledDiv>
+      <StyledHeader>
+        iorin.io
+        <StyledDiv>
           <StyledP>
             <StyledA href="https://twitter.com/iori0705" target="_blank">Twitter</StyledA>
           </StyledP>
@@ -56,8 +56,8 @@ const Header = () => {
           <StyledP>
             <StyledA href="https://github.com/iori0705" target="_blank">GitHub</StyledA>
           </StyledP>
-      </StyledDiv>
-    </StyledHeader>
+        </StyledDiv>
+      </StyledHeader>
     </Blank>
   );
 }
