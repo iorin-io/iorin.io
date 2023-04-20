@@ -6,5 +6,9 @@ const TopPhoto: React.FC = () => (
     layout={"intrinsic"}
     width={3000}
     height={2000}
-    alt="" />
+    loading={'eager'}
+    quality={75}
+    alt="sakura" />
 )
+
+export default TopPhoto;
