@@ -9,7 +9,7 @@ const Blank = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  height: 20px;
+  height: 0px;
 `
 const StyledHeader = styled.header`
   position: fixed;
