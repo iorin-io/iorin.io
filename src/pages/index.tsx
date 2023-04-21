@@ -5,6 +5,8 @@ import Works from '@/contents/Works';
 import Pages from '@/contents/Pages';
 import TopPhoto from '@/components/Sakura2';
 
+
+
 const Hdiv = styled.div`
   display: flex;
   position: sticky;
@@ -14,6 +16,7 @@ const Hdiv = styled.div`
   height: 300px;
 `;
 const ImageDiv = styled.div`
+  position: fixed;
 `
 
 const Index = () => {
@@ -29,11 +32,12 @@ const Index = () => {
         </div>
         <ImageDiv>
           <TopPhoto />
+          <Hdiv>
+            <Pages />
+            <Works />
+          </Hdiv>
         </ImageDiv>
-        <Hdiv>
-          <Pages />
-          <Works />
-        </Hdiv>
+
       </main>
     </div>
   )
