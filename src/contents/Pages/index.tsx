@@ -22,9 +22,9 @@ const Pages = () => {
         <Margin>
             <H1>Pages</H1>
             <StyledDiv>
-                <p><A href='/'>link1</A></p>
-                <p><A href='/'>link2</A></p>
-                <p><A href='/'>link3</A></p>
+                <p><A href='blog.iorin.io' target="_blank">Blog</A></p>
+                <p><s><A href='/'>link2</A></s></p>
+                <p><s><A href='/'>link3</A></s></p>
             </StyledDiv>
         </Margin>
     )
