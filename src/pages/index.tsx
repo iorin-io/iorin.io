@@ -8,12 +8,12 @@ import TopPhoto from '@/components/Sakura2';
 const Hdiv = styled.div`
   display: flex;
   position: sticky;
+  bottom: 0px;
   background-color: white;
   width: 100%;
-
+  height: 300px;
 `;
 const ImageDiv = styled.div`
-  position: fixed;
 `
 
 const Index = () => {
