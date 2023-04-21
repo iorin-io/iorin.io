@@ -54,7 +54,7 @@ const Header = () => {
             <StyledA href="https://www.instagram.com/10ri__75/" target="_blank">Instagram</StyledA>
           </StyledP>
           <StyledP>
-            <StyledA href="https://github.com/iori0705/iorin.io" target="_blank">Sourse</StyledA>
+            <StyledA href="https://github.com/iori0705/iorin.io" target="_blank">Source</StyledA>
           </StyledP>
         </StyledDiv>
       </StyledHeader>
