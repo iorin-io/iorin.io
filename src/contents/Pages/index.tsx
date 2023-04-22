@@ -23,8 +23,7 @@ const Pages = () => {
             <H1>Pages</H1>
             <StyledDiv>
                 <p><A href='blog.iorin.io' target="_blank">Blog</A></p>
-                <p><s><A href='/'>link2</A></s></p>
-                <p><s><A href='/'>link3</A></s></p>
+                <p><A href='/'>授業感想</A></p>
             </StyledDiv>
         </Margin>
     )
