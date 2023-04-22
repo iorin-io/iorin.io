@@ -30,15 +30,8 @@ const Index = () => {
       </Head>
       <main>
         <div>
-          <Header />
+            <Header />
         </div>
-        <ImageDiv>
-          <TopPhoto />
-          <Hdiv>
-            <Pages />
-            <Works />
-          </Hdiv>
-        </ImageDiv>
 
       </main>
     </div>
