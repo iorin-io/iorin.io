@@ -23,7 +23,7 @@ const Pages = () => {
             <H1>Pages</H1>
             <StyledDiv>
                 <p><A href='blog.iorin.io' target="_blank">Blog</A></p>
-                <p><A href='/'>授業感想</A></p>
+                <p><A href='/class_impressions'>授業感想</A></p>
             </StyledDiv>
         </Margin>
     )

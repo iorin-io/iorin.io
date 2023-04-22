@@ -21,8 +21,8 @@ const Works = () => {
         <Margin>
             <H1>Works</H1>
             <StyledDiv>
-                <p><A href='/'>Photo</A></p>
-                <p><A href='/'>Movie</A></p>
+                <p><A href='/photo'>Photo</A></p>
+                <p><A href='/movie'>Movie</A></p>
             </StyledDiv>
         </Margin>
     )
