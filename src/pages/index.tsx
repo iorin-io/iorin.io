@@ -14,6 +14,7 @@ const Hdiv = styled.div`
   background-color: white;
   width: 100%;
   height: 300px;
+  padding-left: 45px;
 `;
 const ImageDiv = styled.div`
   position: fixed;
