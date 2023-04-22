@@ -25,6 +25,7 @@ const Index = () => {
       <Head>
         <title>iorin.io</title>
         <meta name="description" content="行間への憧れ" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
       </Head>
       <main>
         <div>
