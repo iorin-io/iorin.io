@@ -11,7 +11,7 @@ const Hdiv = styled.div`
   display: flex;
   position: sticky;
   bottom: 0px;
-  background-color: white;
+  background-color: #ebe7df;
   width: 100%;
   height: 300px;
   padding-left: 45px;
