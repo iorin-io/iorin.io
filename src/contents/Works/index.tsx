@@ -23,7 +23,6 @@ const Works = () => {
             <StyledDiv>
                 <p><A href='/'>Photo</A></p>
                 <p><A href='/'>Movie</A></p>
-                <p><A href='/'>Repository</A></p>
             </StyledDiv>
         </Margin>
     )
