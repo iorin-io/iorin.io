@@ -39,13 +39,17 @@ const StyledA = styled.a`
   color: white;
   font-size: 12px;
 `
+const Title = styled.a`
+  text-decoration: none;
+  color: white;
+`
 
 const Header = () => {
 
   return (
     <Blank>
       <StyledHeader>
-        iorin.io
+        <Title href="/">iorin.io</Title>
         <StyledDiv>
           <StyledP>
             <StyledA href="https://twitter.com/iori0705" target="_blank">Twitter</StyledA>
