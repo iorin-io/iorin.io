@@ -19,6 +19,31 @@ const Hdiv = styled.div`
 const ImageDiv = styled.div`
   position: fixed;
 `
+const Bodydiv = styled.div`
+  padding-top: 40px;
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #897e6d;
+    font-family: Courier;
+    margin: 0px;
+    padding-top: 20px
+  }
+  h2 {
+    text-align: center;
+    font-size: 20px;
+    color: #897e6d;
+    font-family: Courier;
+    margin: 0px;
+  }
+  hr{
+    border: 0;
+    height: 1px;
+    background: #897e6d;
+    background-image: linear-gradient(to right, #ccc, #897e6d, #ccc);
+    width: 80%;
+  }
+`
 
 const Index = () => {
   return (
@@ -32,6 +57,11 @@ const Index = () => {
         <div>
             <Header />
         </div>
+        <Bodydiv>
+          <h1>iorin.io/blog</h1>
+          <h2>まわりみち</h2>
+          <hr />
+        </Bodydiv>
 
       </main>
     </div>
