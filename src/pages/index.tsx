@@ -31,7 +31,7 @@ const Index = () => {
       <main>
         <div>
           <Header
-            subdirectory=""
+            headertext="iorin.io"
           />
         </div>
         <ImageDiv>
