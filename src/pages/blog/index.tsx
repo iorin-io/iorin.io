@@ -1,8 +1,6 @@
 import Header from '@/components/Header';
 import Head from 'next/head';
 import styled from 'styled-components';
-import Works from '@/contents/Works';
-import Pages from '@/contents/Pages';
 import TopPhoto from '@/components/Sakura2';
 
 
