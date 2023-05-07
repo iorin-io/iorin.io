@@ -45,7 +45,6 @@ const Title = styled.a`
 `
 
 const Header = () => {
-
   return (
     <Blank>
       <StyledHeader>
