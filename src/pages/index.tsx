@@ -30,7 +30,9 @@ const Index = () => {
       </Head>
       <main>
         <div>
-          <Header />
+          <Header
+            subdirectory=""
+          />
         </div>
         <ImageDiv>
           <TopPhoto />

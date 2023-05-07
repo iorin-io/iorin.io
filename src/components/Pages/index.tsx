@@ -23,8 +23,8 @@ const Pages = () => {
         <Margin>
             <H1>Pages</H1>
             <StyledDiv>
-                <p><A href='/blog'>Blog</A></p>
-                <p><A href='/class-impression'>授業感想</A></p>
+                <p><A href='blog' target="_blank">Blog</A></p>
+                <p><A href='/class_impressions'>授業感想</A></p>
             </StyledDiv>
         </Margin>
     )
