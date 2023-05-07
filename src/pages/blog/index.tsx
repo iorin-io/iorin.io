@@ -55,7 +55,9 @@ const Index = () => {
       </Head>
       <main>
         <div>
-            <Header />
+            <Header
+              subdirectory='-blog'
+            />
         </div>
         <Bodydiv>
           <h1>iorin.io/blog</h1>
