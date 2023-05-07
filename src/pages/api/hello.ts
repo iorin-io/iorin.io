@@ -4,6 +4,6 @@ export const config = {
   runtime: 'edge',
 }
 
-export default async function handler(req) {
+export default async function handler() {
   return new Response(JSON.stringify({ name: 'John Doe' }))
 }
