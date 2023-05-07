@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <Blank>
       <StyledHeader>
-        <Title href="/">iorin.io</Title>
+        iorin.io
         <StyledDiv>
           <StyledP>
             <StyledA href="https://twitter.com/iori0705" target="_blank">Twitter</StyledA>
