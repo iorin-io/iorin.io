@@ -24,11 +24,7 @@ const Pages = () => {
             <H1>Pages</H1>
             <StyledDiv>
                 <p><A href='/blog'>Blog</A></p>
-<<<<<<< HEAD
-                <p><A href='/class_impressions'>授業感想</A></p>
-=======
-                <p><A href='/'>授業感想</A></p>
->>>>>>> 480a2f8 (commit)
+                <p><A href='/class-impression'>授業感想</A></p>
             </StyledDiv>
         </Margin>
     )
