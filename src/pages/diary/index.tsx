@@ -3,7 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import styles from "../../styles/Home.module.css";
-import { getAllBlogs } from "../../lib/blog-api";
+import { getAllDiaries } from "../../lib/diary-api";
 
 const Hdiv = styled.div`
   display: flex;
@@ -43,13 +43,13 @@ const Bodydiv = styled.div`
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export const getStaticProps = async () => {
-  const allBlogs = getAllBlogs(["slug", "title", "date", "tags"]);
+  const allDiaries = getAllDiaries(["slug", "title", "date", "tags"]);
   return {
-    props: { allBlogs },
+    props: { allDiaries },
   };
 };
 
-const Index: NextPage<Props> = ({ allBlogs }) => {
+const Index: NextPage<Props> = ({ allDiaries }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -65,16 +65,16 @@ const Index: NextPage<Props> = ({ allBlogs }) => {
 
       <main>
         <div>
-          <Header subdirectory="/blog" />
+          <Header subdirectory="/diary" />
         </div>
         <Bodydiv>
-          <h1>iorin.io/blog</h1>
-          <h2>気温差どうにかしてくれ</h2>
+          <h1>iorin.io/diary</h1>
+          <h2>睡眠時間が削られている</h2>
           <hr />
           <div className={styles.grid}>
-            {allBlogs.map((post) => (
+            {allDiaries.map((post) => (
               <a
-                href={`/blog/${post.slug}`}
+                href={`/diary/${post.slug}`}
                 className={styles.card}
                 key={post.slug}
               >
