@@ -44,14 +44,14 @@ const Title = styled.a`
   color: white;
 `;
 type HeaderProp = {
-  subdirectory: string;
-};
+  headertext: string;
+}
 
-const Header = ({ subdirectory }: HeaderProp) => {
+const Header = ({ headertext } : HeaderProp) => {
   return (
     <Blank>
       <StyledHeader>
-        iorin.io{subdirectory}
+        <Title href="/">{ headertext }</Title>
         <StyledDiv>
           <StyledP>
             <StyledA href="https://twitter.com/iori0705" target="_blank">
