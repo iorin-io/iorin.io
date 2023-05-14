@@ -71,11 +71,10 @@ const Index: NextPage<Props> = ({ allBlogs }) => {
           <h1>iorin.io/blog</h1>
           <h2>気温差どうにかしてくれ</h2>
           <hr />
-          <div className={styles.grid}>
+          <div>
             {allBlogs.map((post) => (
               <a
                 href={`/blog/${post.slug}`}
-                className={styles.card}
                 key={post.slug}
               >
                 <h2>{post.title}</h2>
