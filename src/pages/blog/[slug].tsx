@@ -38,7 +38,6 @@ export const getStaticProps = async ({ params }: any) => {
 
   const content = await markdownToHtml(post.content);
   // content を詰め直して返す
-  console.log("content", content);
   return {
     props: {
       post: {
