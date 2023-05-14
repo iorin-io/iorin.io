@@ -8,6 +8,7 @@ import markdownToHtml from "../../lib/markdownToHtml";
 import { PanoramaSharp } from "@material-ui/icons";
 import styled from "styled-components";
 import Header from "@/components/Header";
+import { pc, sp, tab } from "../../media";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -53,8 +54,15 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 const Article = styled.article`
+  ${sp`
+  padding: 60px 40px;
+  `}
+  ${tab`
   padding: 60px 150px;
-
+  `}
+  ${pc`
+  padding: 60px 150px;
+  `}
   h1 {
     text-align: center;
     font-size: 30px;
@@ -86,6 +94,8 @@ const Article = styled.article`
   p {
     color: #897e6d;
     margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 30px;
   }
   a {
     color: #897e6d;
