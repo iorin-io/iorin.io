@@ -5,17 +5,18 @@ import type { InferGetStaticPropsType, NextPage } from "next";
 import styles from "../../styles/Home.module.css";
 import { getAllDiaries } from "../../lib/diary-api";
 
-const Hdiv = styled.div`
-  display: flex;
-  position: sticky;
-  bottom: 0px;
-  background-color: #ebe7df;
-  width: 100%;
-  height: 300px;
-  padding-left: 45px;
-`;
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+export const getStaticProps = async () => {
+  const allDiaries = getAllDiaries(["slug", "title", "date", "tags"]);
+  return {
+    props: { allDiaries },
+  };
+};
+
 const Bodydiv = styled.div`
-  padding-top: 40px;
+  padding: 60px 40px;
+  display: block;
   h1 {
     text-align: center;
     font-size: 30px;
@@ -31,23 +32,42 @@ const Bodydiv = styled.div`
     font-family: Courier;
     margin: 0px;
   }
+  a{
+    text-decoration: none;
+  }
+  h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #897e6d;
+    font-family: Courier;
+    margin: 0px;
+  }
+  h4 {
+
+    text-align: left;
+    font-size: 15px;
+    color: #897e6d;
+    margin-block-end: 0em;
+    margin-block-start: 0em;
+  }
   hr {
     border: 0;
     height: 1px;
     background: #897e6d;
-    background-image: linear-gradient(to right, #ccc, #897e6d, #ccc);
     width: 80%;
   }
 `;
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>;
-
-export const getStaticProps = async () => {
-  const allDiaries = getAllDiaries(["slug", "title", "date", "tags"]);
-  return {
-    props: { allDiaries },
-  };
-};
+const Diarydiv = styled.div`
+  padding: 20px 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width 70%;
+  border: 1px solid #897e6d;
+  border-radius: 10px;
+`
 
 const Index: NextPage<Props> = ({ allDiaries }) => {
   return (
@@ -73,13 +93,15 @@ const Index: NextPage<Props> = ({ allDiaries }) => {
           <hr />
           <div>
             {allDiaries.map((post) => (
+              <Diarydiv>
               <a
                 href={`/diary/${post.slug}`}
                 key={post.slug}
               >
-                <h2>{post.title}</h2>
-                <p>{post.date}</p>
+                <h3>{post.title}</h3>
+                <h4>{post.date}</h4>
               </a>
+              </Diarydiv>
             ))}
           </div>
         </Bodydiv>

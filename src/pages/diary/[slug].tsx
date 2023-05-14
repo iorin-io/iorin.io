@@ -6,6 +6,8 @@ import styles from "../../styles/Home.module.css";
 import { getAllDiaries, getDiaryBySlug } from "../../lib/diary-api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { PanoramaSharp } from "@material-ui/icons";
+import styled from "styled-components";
+import Header from "@/components/Header";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -50,6 +52,46 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
+const Article = styled.article`
+  padding: 60px 150px;
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #897e6d;
+    font-family: Courier;
+    margin: 0px;
+    padding-top: 20px;
+  }
+  h2 {
+    text-align: left;
+    font-size: 20px;
+    color: #897e6d;
+    font-family: Courier;
+    margin: 0px;
+  }
+  h3 {
+    text-align: right;
+    font-size: 15px;
+    color: #897e6d;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background: #897e6d;
+    width: 100%;
+  }
+  p {
+    color: #897e6d;
+    margin-left: 20px;
+  }
+  a{
+    color: #897e6d;
+  }
+`;
+
 const Post: NextPage<Props> = ({ post }) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -57,7 +99,7 @@ const Post: NextPage<Props> = ({ post }) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>iorin.io</title>
         <meta name="description" content="行間への憧れ" />
@@ -68,20 +110,21 @@ const Post: NextPage<Props> = ({ post }) => {
           sizes="32x32"
         />
       </Head>
-      <main className={styles.main}>
-        <article>
-          <h1 className={styles.title}>{post.title}</h1>
-          <div className={styles.grid}>
+      <div>
+          <Header subdirectory="/blog" />
+      </div>
+      <main>
+        <Article>
+          <h1>{post.title}</h1>
+          <h3>{post.date}</h3>
+          <hr />
+          <div>
             <div>
-              <p>{post.date}</p>
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
           </div>
-        </article>
+        </Article>
       </main>
-      <footer className={styles.footer}>
-        <p>Powered by Next.js.</p>
-      </footer>
     </div>
   );
 };
