@@ -1,5 +1,6 @@
 ---
 title: "2023/05/13"
+date: ""
 ---
 
 朝までWORD部屋でTypeScriptと格闘していた。
