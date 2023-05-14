@@ -56,12 +56,30 @@ export const getStaticProps = async ({ params }: any) => {
 const Article = styled.article`
   ${sp`
   padding: 60px 40px;
+  p {
+    color: #897e6d;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
   `}
   ${tab`
   padding: 60px 150px;
+  p {
+    color: #897e6d;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
   `}
   ${pc`
   padding: 60px 150px;
+  p {
+    color: #897e6d;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
   `}
   h1 {
     text-align: center;
@@ -90,12 +108,6 @@ const Article = styled.article`
     height: 1px;
     background: #897e6d;
     width: 100%;
-  }
-  p {
-    color: #897e6d;
-    margin-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 30px;
   }
   a {
     color: #897e6d;
