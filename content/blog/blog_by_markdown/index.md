@@ -7,7 +7,7 @@ date: "2023/05/14"
 
 ## モチベ
 
-　いちいちhtml書きたくなかったので、markdownで書けたら楽だなあと思ったので。友人のm○meemtくんは自作mlつくってたしね
+　いちいちhtml書きたくなかったので、markdownで書けたら楽だなあと思った。友人のm○meemtくんは自作mlつくってたしね。
 
 ## 実装
 　[このサイト](https://blog.chick-p.work/blog/next-js-blog/)を相当参考にしました。api.tsx でmarkdownファイルとパスを取得して、[slug].tsx が内容を受け取り表示する、という感じになっています（ざっくり）。
