@@ -133,7 +133,7 @@ const Post: NextPage<Props> = ({ post }) => {
         />
       </Head>
       <div>
-        <Header headertext="iorin.io/diary" />
+        <Header headertext="iorin.io" />
       </div>
       <main>
         <Article>
