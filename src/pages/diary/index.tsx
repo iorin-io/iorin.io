@@ -84,7 +84,7 @@ const Index: NextPage<Props> = ({ allDiaries }) => {
 
       <main>
         <div>
-          <Header subdirectory="/diary" />
+          <Header headertext="iorin.io/diary" />
         </div>
         <Bodydiv>
           <h1>iorin.io/diary</h1>

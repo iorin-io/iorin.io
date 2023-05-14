@@ -107,7 +107,7 @@ const Post: NextPage<Props> = ({ post }) => {
         />
       </Head>
       <div>
-        <Header subdirectory="/blog" />
+        <Header headertext="ioirin.io/blog" />
       </div>
       <main>
         <Article>
