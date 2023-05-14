@@ -15,7 +15,6 @@ const H1 = styled.h1`
 `;
 const A = styled.a`
   color: #97aaab;
-  text-decoration: line-through;
 `;
 
 const Pages = () => {
