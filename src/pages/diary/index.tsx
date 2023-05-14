@@ -32,7 +32,7 @@ const Bodydiv = styled.div`
     font-family: Courier;
     margin: 0px;
   }
-  a{
+  a {
     text-decoration: none;
   }
   h3 {
@@ -43,7 +43,6 @@ const Bodydiv = styled.div`
     margin: 0px;
   }
   h4 {
-
     text-align: left;
     font-size: 15px;
     color: #897e6d;
@@ -67,7 +66,7 @@ const Diarydiv = styled.div`
   width 70%;
   border: 1px solid #897e6d;
   border-radius: 10px;
-`
+`;
 
 const Index: NextPage<Props> = ({ allDiaries }) => {
   return (
@@ -94,13 +93,10 @@ const Index: NextPage<Props> = ({ allDiaries }) => {
           <div>
             {allDiaries.map((post) => (
               <Diarydiv>
-              <a
-                href={`/diary/${post.slug}`}
-                key={post.slug}
-              >
-                <h3>{post.title}</h3>
-                <h4>{post.date}</h4>
-              </a>
+                <a href={`/diary/${post.slug}`} key={post.slug}>
+                  <h3>{post.title}</h3>
+                  <h4>{post.date}</h4>
+                </a>
               </Diarydiv>
             ))}
           </div>

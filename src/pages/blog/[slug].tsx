@@ -83,7 +83,7 @@ const Article = styled.article`
     color: #897e6d;
     margin-left: 20px;
   }
-  a{
+  a {
     color: #897e6d;
   }
 `;
@@ -107,7 +107,7 @@ const Post: NextPage<Props> = ({ post }) => {
         />
       </Head>
       <div>
-          <Header subdirectory="/blog" />
+        <Header subdirectory="/blog" />
       </div>
       <main>
         <Article>
