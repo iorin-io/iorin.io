@@ -1,14 +1,15 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 const TopPhoto: React.FC = () => (
-    <Image
+  <Image
     src="/photo/sakura.jpg"
     layout={"intrinsic"}
     width={3000}
     height={2000}
-    loading={'eager'}
+    loading={"eager"}
     quality={75}
-    alt="sakura" />
-)
+    alt="sakura"
+  />
+);
 
 export default TopPhoto;
