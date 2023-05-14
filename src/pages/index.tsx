@@ -14,7 +14,7 @@ const Hdiv = styled.div`
   height: 300px;
   padding-left: 45px;
 `;
-const ImageDiv = styled.div`
+const Div = styled.div`
   position: fixed;
 `;
 
@@ -35,13 +35,13 @@ const Index = () => {
         <div>
           <Header subdirectory="" />
         </div>
-        <ImageDiv>
+        <Div>
           <TopPhoto />
           <Hdiv>
             <Pages />
             <Works />
           </Hdiv>
-        </ImageDiv>
+        </Div>
       </main>
     </div>
   );
