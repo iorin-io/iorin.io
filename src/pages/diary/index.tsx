@@ -70,7 +70,7 @@ const Diarydiv = styled.div`
 
 const Index: NextPage<Props> = ({ allDiaries }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>iorin.io</title>
         <meta name="description" content="行間への憧れ" />
