@@ -60,6 +60,6 @@ export function getAllBlogs(fields: string[] = []) {
   const slugs = getBlogSlugs();
   const posts = slugs
     .map((slug) => getBlogBySlug(slug, fields))
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
   return posts;
 }

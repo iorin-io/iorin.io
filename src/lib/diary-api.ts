@@ -59,6 +59,6 @@ export function getAllDiaries(fields: string[] = []) {
   const slugs = getDiarySlugs();
   const posts = slugs
     .map((slug) => getDiaryBySlug(slug, fields))
-    .sort((a, b) => (a.date > b.date ? 1 : -1));
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
   return posts;
 }
