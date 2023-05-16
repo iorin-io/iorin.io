@@ -92,7 +92,7 @@ const Index: NextPage<Props> = ({ allDiaries }) => {
           <hr />
           <div>
             {allDiaries.map((post) => (
-              <Diarydiv>
+              <Diarydiv key={post.slug}>
                 <a href={`/diary/${post.slug}`} key={post.slug}>
                   <h3>{post.title}</h3>
                   <h4>{post.date}</h4>

@@ -54,7 +54,7 @@ const Blogdiv = styled.div`
   margin-left: auto;
   margin-bottom: 20px;
   margin-top: 20px;
-  width 70%;
+  width: 70%;
   border: 1px solid #897e6d;
   border-radius: 10px;
 `;
@@ -70,7 +70,7 @@ export const getStaticProps = async () => {
 
 const Index: NextPage<Props> = ({ allBlogs }) => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>iorin.io</title>
         <meta name="description" content="行間への憧れ" />
@@ -92,7 +92,7 @@ const Index: NextPage<Props> = ({ allBlogs }) => {
           <hr />
           <div>
             {allBlogs.map((post) => (
-              <Blogdiv>
+              <Blogdiv key={post.slug}>
                 <a href={`/blog/${post.slug}`} key={post.slug}>
                   <h4>{post.date}</h4>
                   <h3>{post.title}</h3>
@@ -102,7 +102,7 @@ const Index: NextPage<Props> = ({ allBlogs }) => {
           </div>
         </Bodydiv>
       </main>
-    </div>
+    </>
   );
 };
 

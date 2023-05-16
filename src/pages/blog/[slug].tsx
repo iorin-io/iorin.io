@@ -15,7 +15,6 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
  * 記事のパスを取得する
  */
 export const getStaticPaths = async () => {
-  console.log("getStaticPaths");
   const posts = getAllBlogs(["slug"]);
   return {
     paths: posts.map((post) => {
@@ -33,7 +32,6 @@ export const getStaticPaths = async () => {
  * 記事の内容を取得する
  */
 export const getStaticProps = async ({ params }: any) => {
-  console.log("getStaticProps");
   const post = getBlogBySlug(params.slug, ["slug", "title", "date", "content"]);
   // Markdown を HTML に変換する
 
