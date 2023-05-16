@@ -70,7 +70,7 @@ export const getStaticProps = async () => {
 
 const Index: NextPage<Props> = ({ allBlogs }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <Head>
         <title>iorin.io</title>
         <meta name="description" content="行間への憧れ" />
