@@ -3,7 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import Works from "@/components/Works";
 import Pages from "@/components/Pages";
-import TopPhoto from "@/components/Sakura2";
+import TopPhoto from "@/components/Sakura";
 
 const Hdiv = styled.div`
   display: flex;

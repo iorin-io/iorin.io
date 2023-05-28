@@ -1,15 +1,11 @@
-import Image from "next/image";
+import styled from "styled-components";
 
-const TopPhoto: React.FC = () => (
-  <Image
-    src="/photo/sakura.jpg"
-    layout={"intrinsic"}
-    width={3000}
-    height={2000}
-    loading={"eager"}
-    quality={75}
-    alt="sakura"
-  />
-);
+export const StyledImg = styled.img`
+  width: 100%;
+`;
+
+function TopPhoto() {
+  return <StyledImg src="/photo/sakura.webp" />;
+}
 
 export default TopPhoto;
