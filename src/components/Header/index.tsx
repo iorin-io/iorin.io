@@ -54,18 +54,18 @@ const Header = ({ headertext } : HeaderProp) => {
         <Title href="/">{ headertext }</Title>
         <StyledDiv>
           <StyledP>
-            <StyledA href="https://twitter.com/iori0705" target="_blank">
+            <StyledA href="https://twitter.com/iorin__io" target="_blank">
               Twitter
             </StyledA>
           </StyledP>
           <StyledP>
-            <StyledA href="https://www.instagram.com/10ri__75/" target="_blank">
+            <StyledA href="https://www.instagram.com/iorin_io/" target="_blank">
               Instagram
             </StyledA>
           </StyledP>
           <StyledP>
             <StyledA
-              href="https://github.com/iori0705/iorin.io"
+              href="https://github.com/iorin-io/iorin.io"
               target="_blank"
             >
               Source
