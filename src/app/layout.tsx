@@ -1,5 +1,9 @@
 // app/layout.tsx
+import './globals.css';
+import { Inter } from 'next/font/google'
 import { Metadata } from 'next';
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
@@ -10,15 +14,13 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-	// Layouts must accept a children prop.
-	// This will be populated with nested layouts or pages
-	children,
+    children,
   }: {
-	children: React.ReactNode
+    children: React.ReactNode
   }) {
-	return (
-	  <html lang="ja">
-		<body>{children}</body>
-	  </html>
-	)
+    return (
+      <html lang="ja">
+        <body className={inter.className}>{children}</body>
+      </html>
+    )
   }
