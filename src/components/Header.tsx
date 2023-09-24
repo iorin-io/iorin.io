@@ -1,79 +1,64 @@
-import Head from "next/head";
 import Link from "next/link";
-import styled from "styled-components";
-import React, { useState, useEffect } from "react";
-import { Style } from "@material-ui/icons";
+import React from "react";
+import { css } from "../../styled-system/css";
 
-const Blank = styled.div`
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 0px;
-`;
-const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45px;
-  z-index: 999;
-  background-color: #97aaab;
-  font-size: 30px;
-  color: white;
-  padding-left: 50px;
-`;
-
-const StyledP = styled.p`
-  display: inline-block;
-  font-size: 10px;
-  padding: 5px;
-`;
-const StyledDiv = styled.div`
-  display: inline-block;
-  position: absolute;
-  right: 20px;
-`;
-
-const StyledA = styled.a`
-  color: white;
-  font-size: 12px;
-`;
-const Title = styled.a`
-  text-decoration: none;
-  color: white;
-`;
 type HeaderProp = {
   headertext: string;
 }
 
+const linkStyle = css({
+  color: "white",
+  fontSize: "12px",
+  padding : "0 5px",
+  display: "inline-block",
+  verticalAlign: "middle",
+  lineHeight: "45px",
+})
+const linksStyle = css({
+  display: "inline-block",
+  height: "45px",
+  textAlign: "center",
+  margin: "0 0 0 auto",
+})
+
+const headerStyle = css({
+  width: "100%",
+  height: "45px",
+  backgroundColor: "#97aaab",
+  display: "flex",
+  padding: "0 20px",
+})
+
+const titleStyle = css({
+  fontSize: "30px",
+  color: "white",
+  textDecoration: "none",
+  display: "inline-block",
+  height: "45px",
+  margin: "0 10px",
+})
+
 const Header = ({ headertext } : HeaderProp) => {
   return (
-    <Blank>
-      <StyledHeader>
-        <Title href="/">{ headertext }</Title>
-        <StyledDiv>
-          <StyledP>
-            <StyledA href="https://twitter.com/iorin__io" target="_blank">
+    <div>
+      <div className={headerStyle}>
+        <Link className={titleStyle} href="/">{ headertext }</Link>
+        <div className={linksStyle}>
+            <a className={linkStyle} href="https://twitter.com/iorin__io" target="_blank">
               Twitter
-            </StyledA>
-          </StyledP>
-          <StyledP>
-            <StyledA href="https://www.instagram.com/iorin_io/" target="_blank">
+            </a>
+            <a className={linkStyle} href="https://www.instagram.com/iorin_io/" target="_blank">
               Instagram
-            </StyledA>
-          </StyledP>
-          <StyledP>
-            <StyledA
+            </a>
+            <a className={linkStyle}
               href="https://github.com/iorin-io/iorin.io"
               target="_blank"
             >
               Source
-            </StyledA>
-          </StyledP>
-        </StyledDiv>
-      </StyledHeader>
-    </Blank>
+            </a>
+          </div>
+      </div>
+    </div>
   );
 };
 
