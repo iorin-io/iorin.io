@@ -2,10 +2,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'iorin.io',
+  title: {
+	default: 'iorin.io',
+	template: '%s | iorin.io',
+  },
   description: 'Hello World',
 }
-
 
 export default function RootLayout({
 	// Layouts must accept a children prop.
