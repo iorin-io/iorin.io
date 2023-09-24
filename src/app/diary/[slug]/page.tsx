@@ -3,12 +3,12 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
-import { getAllDiaries, getDiaryBySlug } from "../../lib/diary-api";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { getAllDiaries, getDiaryBySlug } from "../../../lib/diary-api";
+import markdownToHtml from "../../../lib/markdownToHtml";
 import { PanoramaSharp } from "@material-ui/icons";
 import styled from "styled-components";
 import Header from "@/components/Header";
-import { pc, sp, tab } from "../../media";
+import { pc, sp, tab } from "../../../media";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

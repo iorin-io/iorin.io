@@ -2,12 +2,12 @@ import { NextPage, InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { getAllBlogs, getBlogBySlug } from "../../lib/blog-api";
-import markdownToHtml from "../../lib/markdownToHtml";
+import { getAllBlogs, getBlogBySlug } from "../../../lib/blog-api";
+import markdownToHtml from "../../../lib/markdownToHtml";
 import { PanoramaSharp } from "@material-ui/icons";
 import Header from "@/components/Header";
 import styled from "styled-components";
-import { pc, sp, tab } from "../../media";
+import { pc, sp, tab } from "../../../media";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
