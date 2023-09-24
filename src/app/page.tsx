@@ -1,52 +1,42 @@
 import Header from "@/components/Header";
-import Head from "next/head";
-import styled from "styled-components";
-import Works from "@/components/Works";
-import Pages from "@/components/Pages";
-import TopPhoto from "@/components/Sakura";
+//import Works from "@/components/Works";
+//import Pages from "@/components/Pages";
+import Image from "next/image";
+import TopPhoto from "../../public/photo/mttsukuba.webp";
+import { css } from '../../styled-system/css';
+import { Metadata } from 'next';
 
-const Hdiv = styled.div`
-  display: flex;
-  position: sticky;
-  bottom: 0px;
-  background-color: #ebe7df;
-  width: 100%;
-  height: 300px;
-  padding-left: 45px;
-`;
-const Div = styled.div`
-  position: fixed;
-`;
+export const metadata: Metadata = {
+  title: "Top",
+}
 
-const Index = () => {
+const pageStyle = css({
+  display: "flex",
+  position: "sticky",
+  bottom: "0px",
+  background: "#ebe7df",
+  width: "100%",
+  height: "300px",
+  paddingLeft: "45px",
+})
+
+const fixStyle = css({
+  position: "fixed",
+})
+
+const Page = () => {
   return (
     <div>
-      <Head>
-        <title>iorin.io</title>
-        <meta name="description" content="行間への憧れ" />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="/favicon.ico"
-          sizes="32x32"
+      <div>
+        <Header
+          headertext="iorin.io"
         />
-      </Head>
-      <main>
-        <div>
-          <Header
-            headertext="iorin.io"
-          />
-        </div>
-        <Div>
-          <TopPhoto />
-          <Hdiv>
-            <Pages />
-            <Works />
-          </Hdiv>
-        </Div>
-      </main>
+      </div>
+      <div>
+        <Image className={css({width: "100%"})} src={TopPhoto} alt="iorin.io" />
+      </div>
     </div>
   );
 };
 
-export default Index;
+export default Page;

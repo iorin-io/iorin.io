@@ -27,6 +27,7 @@ const headerStyle = css({
   backgroundColor: "#97aaab",
   display: "flex",
   padding: "0 20px",
+  position: "fixed",
 })
 
 const titleStyle = css({

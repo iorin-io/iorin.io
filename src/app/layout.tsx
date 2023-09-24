@@ -1,4 +1,3 @@
-// app/layout.tsx
 import './globals.css';
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next';
@@ -7,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-	default: 'iorin.io',
-	template: '%s | iorin.io',
+    default: 'iorin.io',
+    template: '%s | iorin.io',
   },
   description: 'Hello World',
 }
