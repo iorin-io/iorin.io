@@ -6,6 +6,9 @@ import TopPhoto from "../../public/photo/mttsukuba.webp";
 import { css } from '../../styled-system/css';
 import { Metadata } from 'next';
 
+export const runtime = 'edge';
+export const config = { runtime: 'edge' };
+
 export const metadata: Metadata = {
   title: "Top",
 }
