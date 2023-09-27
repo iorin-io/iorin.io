@@ -4,11 +4,4 @@ const nextConfig = {
   experimental: { runtime: 'edge'}
 };
 
-module.exports = nextConfig
-module.exports = {
-  reactStrictMode: true,
-  images: {
-      domains: ["iorin.io"],
-      formats: ["image/webp"],
-  },
-};
+module.exports = nextConfig;
