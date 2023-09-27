@@ -4,10 +4,3 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-module.exports = {
-  reactStrictMode: true,
-  images: {
-      domains: ["iorin.io"],
-      formats: ["image/webp"],
-  },
-};
