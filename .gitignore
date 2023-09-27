@@ -7,6 +7,7 @@
 .env.build
 
 # Dependency directories
+.vercel
 
 # Logs
 npm-debug.log*
