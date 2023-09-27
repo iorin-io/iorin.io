@@ -15,3 +15,5 @@ yarn-error.log*
 node_modules/
 
 .vercel
+
+styled-system/
