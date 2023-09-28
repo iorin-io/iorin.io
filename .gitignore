@@ -18,5 +18,7 @@ node_modules/
 
 styled-system/
 
+.storybook/
+
 .yarn/
 !.yarn/release/*

@@ -3140,7 +3140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pandacss/dev@npm:^0.15.1":
+"@pandacss/dev@npm:^0.15.3":
   version: 0.15.3
   resolution: "@pandacss/dev@npm:0.15.3"
   dependencies:
@@ -12626,7 +12626,7 @@ __metadata:
     "@material-ui/core": ^4.12.4
     "@material-ui/icons": ^4.11.3
     "@mui/material": ^5.12.1
-    "@pandacss/dev": ^0.15.1
+    "@pandacss/dev": ^0.15.3
     "@storybook/addon-essentials": ^7.4.4
     "@storybook/addon-interactions": ^7.4.4
     "@storybook/addon-links": ^7.4.4
