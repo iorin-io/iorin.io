@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -20,19 +23,39 @@
     "bootstrap": "^5.2.3",
     "eslint": "^8.38.0",
     "eslint-config-next": "13.3.0",
+    "fs": "^0.0.1-security",
     "glob": "^10.2.3",
     "gray-matter": "^4.0.3",
-    "next": "13.3.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^13.5.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.2",
-    "styled-components": "^5.3.9",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.6.1",
+    "@pandacss/dev": "^0.15.3",
+    "@storybook/addon-essentials": "^7.4.4",
+    "@storybook/addon-interactions": "^7.4.4",
+    "@storybook/addon-links": "^7.4.4",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.4",
+    "@storybook/nextjs": "^7.4.4",
+    "@storybook/react": "^7.4.4",
+    "@storybook/testing-library": "^0.2.1",
     "@types/styled-components": "^5.1.26",
     "eslint-config-prettier": "^8.8.0",
-    "prettier": "^2.8.8"
-  }
+    "eslint-plugin-storybook": "^0.6.14",
+    "prettier": "^2.8.8",
+    "storybook": "^7.4.4",
+    "vercel": "^32.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended",
+      "plugin:storybook/recommended"
+    ]
+  },
+  "packageManager": "yarn@3.6.3"
 }
