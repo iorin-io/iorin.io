@@ -17,3 +17,6 @@ node_modules/
 .vercel
 
 styled-system/
+
+.yarn/
+!.yarn/release/*

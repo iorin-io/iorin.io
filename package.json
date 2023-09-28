@@ -56,5 +56,6 @@
       "plugin:storybook/recommended",
       "plugin:storybook/recommended"
     ]
-  }
+  },
+  "packageManager": "yarn@3.6.3"
 }
