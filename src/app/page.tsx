@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Header from "../components/Header";
 //import Works from "@/components/Works";
 //import Pages from "@/components/Pages";
 import Image from "next/image";
