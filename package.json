@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "panda codegen",
+    "postinstall": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
