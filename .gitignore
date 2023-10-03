@@ -29,3 +29,5 @@ styled-system/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.src/stories/
