@@ -31,3 +31,4 @@ styled-system/
 !.yarn/versions
 
 .src/stories/
+.src/stories/*
