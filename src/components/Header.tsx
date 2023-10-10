@@ -6,26 +6,9 @@ type HeaderProp = {
   headertext: string;
 }
 
-const linkStyle = css({
-  color: "white",
-  fontSize: "12px",
-  padding : "0 5px",
-  display: "inline-block",
-  verticalAlign: "middle",
-  lineHeight: "45px",
-})
-const linksStyle = css({
-  display: "inline-block",
-  height: "45px",
-  textAlign: "center",
-  margin: "0 0 0 auto",
-})
-
 const headerStyle = css({
-  width: "100%",
-  height: "45px",
   backgroundColor: "#97aaab",
-  display: "flex",
+  height: "100vh",
   padding: "0 20px",
   position: "fixed",
 })
@@ -34,9 +17,19 @@ const titleStyle = css({
   fontSize: "30px",
   color: "white",
   textDecoration: "none",
-  display: "inline-block",
   height: "45px",
   margin: "0 10px",
+})
+
+const linkStyle = css({
+  color: "white",
+  fontSize: "12px",
+  padding : "0 5px",
+  verticalAlign: "middle",
+  lineHeight: "45px",
+})
+const listStyle = css({
+  textAlign: "center",
 })
 
 const Header = ({ headertext } : HeaderProp) => {
@@ -44,20 +37,20 @@ const Header = ({ headertext } : HeaderProp) => {
     <div>
       <div className={headerStyle}>
         <Link className={titleStyle} href="/">{ headertext }</Link>
-        <div className={linksStyle}>
-            <a className={linkStyle} href="https://twitter.com/iorin__io" target="_blank">
+        <ul className={listStyle}>
+            <li><a className={linkStyle} href="https://twitter.com/iorin__io" target="_blank">
               Twitter
-            </a>
-            <a className={linkStyle} href="https://www.instagram.com/iorin_io/" target="_blank">
+            </a></li>
+            <li><a className={linkStyle} href="https://www.instagram.com/iorin_io/" target="_blank">
               Instagram
-            </a>
-            <a className={linkStyle}
+            </a></li>
+            <li><a className={linkStyle}
               href="https://github.com/iorin-io/iorin.io"
               target="_blank"
             >
               Source
-            </a>
-          </div>
+            </a></li>
+          </ul>
       </div>
     </div>
   );
