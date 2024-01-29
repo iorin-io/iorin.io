@@ -8,6 +8,9 @@
 
 # Dependency directories
 .vercel
+.storybook
+.yarn
+src/stories
 
 # Logs
 npm-debug.log*
