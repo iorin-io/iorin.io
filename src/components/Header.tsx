@@ -1,64 +1,68 @@
 import Link from "next/link";
 import React from "react";
 import { css } from "../../styled-system/css";
+import headerConfig from "@/config/headerConfig";
 
 type HeaderProp = {
-  headertext: string;
+  headerText: string;
+  links: { href: string; label: string }[];
 }
 
-const linkStyle = css({
-  color: "white",
-  fontSize: "12px",
-  padding : "0 5px",
-  display: "inline-block",
-  verticalAlign: "middle",
-  lineHeight: "45px",
-})
-const linksStyle = css({
-  display: "inline-block",
-  height: "45px",
-  textAlign: "center",
-  margin: "0 0 0 auto",
-})
-
 const headerStyle = css({
-  width: "100%",
-  height: "45px",
   backgroundColor: "#97aaab",
+  height: "100vh",
+  padding: "10px 20px",
+	width: "clamp(130px, 20vw, 170px)",
   display: "flex",
-  padding: "0 20px",
-  position: "fixed",
+  flexDirection: "column",
+  justifyContent: "space-between",
 })
 
 const titleStyle = css({
   fontSize: "30px",
   color: "white",
   textDecoration: "none",
-  display: "inline-block",
   height: "45px",
-  margin: "0 10px",
+	textAlign: "center",
 })
 
-const Header = ({ headertext } : HeaderProp) => {
+const linkStyle = css({
+  color: "white",
+  fontSize: "14px",
+  padding : "0 5px",
+  verticalAlign: "middle",
+  lineHeight: "40px",
+})
+const listStyle = css({
+  textAlign: "center",
+})
+
+const externalLinksListStyle = css({
+  textAlign: "center",
+})
+
+const Header = () => {
+  const { headerText, links } = headerConfig;
   return (
     <div>
       <div className={headerStyle}>
-        <Link className={titleStyle} href="/">{ headertext }</Link>
-        <div className={linksStyle}>
-            <a className={linkStyle} href="https://twitter.com/iorin__io" target="_blank">
-              Twitter
-            </a>
-            <a className={linkStyle} href="https://www.instagram.com/iorin_io/" target="_blank">
-              Instagram
-            </a>
-            <a className={linkStyle}
-              href="https://github.com/iorin-io/iorin.io"
-              target="_blank"
-            >
-              Source
-            </a>
-          </div>
+        <ul className={listStyle}>
+					<li><Link className={titleStyle} href="/">{ headerText }</Link></li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link href={link.href} className={linkStyle}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ul className={externalLinksListStyle}>
+        <li><Link className={linkStyle} href="https://twitter.com/iorin__io" target="_blank">Twitter</Link></li>
+        <li><Link className={linkStyle} href="https://www.instagram.com/iorin_io/" target="_blank">Instagram</Link></li>
+        <li><Link className={linkStyle} href="https://github.com/iorin-io" target="_blank">GitHub</Link></li>
+      </ul>
       </div>
+
     </div>
   );
 };

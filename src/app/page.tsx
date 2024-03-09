@@ -1,8 +1,6 @@
 import Header from "../components/Header";
 //import Works from "@/components/Works";
 //import Pages from "@/components/Pages";
-import Image from "next/image";
-import TopPhoto from "../../public/photo/mttsukuba.webp";
 import { css } from '../../styled-system/css';
 import { Metadata } from 'next';
 
@@ -13,29 +11,16 @@ export const metadata: Metadata = {
 }
 
 const pageStyle = css({
-  display: "flex",
-  position: "sticky",
-  bottom: "0px",
-  background: "#ebe7df",
-  width: "100%",
-  height: "300px",
-  paddingLeft: "45px",
-})
-
-const fixStyle = css({
-  position: "fixed",
+  width: "100dvw",
+  height: "100dvh",
+  backgroundColor: "#ededed",
 })
 
 const Page = () => {
   return (
-    <div>
+    <div className={pageStyle}>
       <div>
-        <Header
-          headertext="iorin.io"
-        />
-      </div>
-      <div>
-        <Image className={css({width: "100%"})} src={TopPhoto} alt="iorin.io" />
+        <Header/>
       </div>
     </div>
   );

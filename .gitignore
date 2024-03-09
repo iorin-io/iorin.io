@@ -4,10 +4,14 @@
 
 # dotenv environment variables file (build for Zeit Now)
 .env
+.env.local
 .env.build
 
 # Dependency directories
 .vercel
+.storybook
+.yarn
+src/stories
 
 # Logs
 npm-debug.log*
@@ -29,3 +33,5 @@ styled-system/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+src/stories
