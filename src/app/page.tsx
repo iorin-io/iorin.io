@@ -29,14 +29,7 @@ const fixStyle = css({
 const Page = () => {
   return (
     <div>
-      <div>
-        <Header
-          headertext="iorin.io"
-        />
-      </div>
-      <div>
-        <Image className={css({width: "100%"})} src={TopPhoto} alt="iorin.io" />
-      </div>
+      現在改修中です！
     </div>
   );
 };
