@@ -12,9 +12,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "yarn"
-      - run: yarn install
-      - run: yarn prettier . --check
+          cache: "npm"
+      - run: npm install
+      - run: npx prettier . --check
   eslint:
     runs-on: ubuntu-latest
     steps:
@@ -22,9 +22,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "yarn"
-      - run: yarn install
-      - run: yarn eslint .
+          cache: "npm"
+      - run: npm install
+      - run: npx eslint .
   build:
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +32,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: "yarn"
-      - run: yarn install
-      - run: yarn run build
+          cache: "npm"
+      - run: npm install
+      - run: npm run build

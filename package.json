@@ -1,29 +1,16 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "prepare": "panda codegen",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "eslint-config-prettier": "^9.1.0",
-    "next": "14.1.3",
-    "react": "^18",
-    "react-dom": "^18"
-  },
+  "name": "iorin.io",
+  "packageManager": "yarn@4.1.1",
   "devDependencies": {
-    "@pandacss/dev": "^0.34.2",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.3",
-    "prettier": "3.2.5",
-    "typescript": "5.3.3"
-  },
-  "packageManager": "yarn@3.6.3"
+    "@types/eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "*"
+  }
 }
