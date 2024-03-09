@@ -1,0 +1,18 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"extends": [
+		"standard-with-typescript",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking", // typescriptの型チェックをします
+		"plugin:@next/next/core-web-vitals", // Next.jsとCore Web Vitalsのチェック
+		"prettier"
+	],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {}
+}
