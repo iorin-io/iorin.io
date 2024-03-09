@@ -4,6 +4,7 @@
 
 # dotenv environment variables file (build for Zeit Now)
 .env
+.env.local
 .env.build
 
 # Dependency directories
