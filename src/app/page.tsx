@@ -3,14 +3,14 @@ import Header from "../components/Header";
 //import Pages from "@/components/Pages";
 import Image from "next/image";
 import TopPhoto from "../../public/photo/mttsukuba.webp";
-import { css } from '../../styled-system/css';
-import { Metadata } from 'next';
+import { css } from "../../styled-system/css";
+import { Metadata } from "next";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "Top",
-}
+};
 
 const pageStyle = css({
   display: "flex",
@@ -20,18 +20,14 @@ const pageStyle = css({
   width: "100%",
   height: "300px",
   paddingLeft: "45px",
-})
+});
 
 const fixStyle = css({
   position: "fixed",
-})
+});
 
 const Page = () => {
-  return (
-    <div>
-      現在改修中です！
-    </div>
-  );
+  return <div>現在改修中です！</div>;
 };
 
 export default Page;

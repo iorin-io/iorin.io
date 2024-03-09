@@ -1,10 +1,6 @@
 {
-	"env": {
-		"es2022": true
-	},
-	"parserOptions": {
-		"ecmaVersion": 13,
-		"sourceType": "module"
-	},
-	"parser": "@typescript-eslint/parser"
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ]
 }
