@@ -115,6 +115,7 @@ export default async function StaticDetailPage({
 	params: { postId: string };
 }) {
 	const post = await getDetail(postId);
+	console.log(post);
 	const formattedDate = formatDate(post.publishedAt ?? "1900-01-01");
 
 	const $ = load(post.content);

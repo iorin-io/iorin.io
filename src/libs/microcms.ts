@@ -5,7 +5,7 @@ import type {
 	MicroCMSDate,
 } from "microcms-js-sdk";
 
-export type News = {
+export type Blog = {
 	id: string;
 	title: string;
 	content: string;
@@ -28,8 +28,8 @@ export const client = createClient({
 
 // ブログ一覧を取得
 export const getList = async (queries?: MicroCMSQueries) => {
-	const listData = await client.getList<News>({
-		endpoint: "news",
+	const listData = await client.getList<Blog>({
+		endpoint: "blogs",
 		queries,
 	});
 
@@ -44,8 +44,8 @@ export const getDetail = async (
 	contentId: string,
 	queries?: MicroCMSQueries,
 ) => {
-	const detailData = await client.getListDetail<News>({
-		endpoint: "news",
+	const detailData = await client.getListDetail<Blog>({
+		endpoint: "blogs",
 		contentId,
 		queries,
 	});

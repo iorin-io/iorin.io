@@ -45,7 +45,7 @@ export default async function StaticPage() {
 									<div>{previewText}</div>
 								</div>
 								<div>
-									<Link href={`/news/${post.id}`}>Read More</Link>
+									<Link href={`/blogs/${post.id}`}>Read More</Link>
 								</div>
 							</div>
 						);
