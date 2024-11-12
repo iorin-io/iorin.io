@@ -1,9 +1,13 @@
+"use client";
+
 import { css } from "../../styled-system/css";
 import Image from "next/image";
-import background from "/public/background.webp";
 import { Inknut_Antiqua } from "next/font/google";
 import * as motion from "framer-motion/client";
-import { ReactNode } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { BottomAppearance } from "../components/BottomAppearance";
+import { BackgroundImage } from "../components/BackgroundImage";
 
 const Inknut400 = Inknut_Antiqua({
 	weight: "400",
@@ -36,36 +40,39 @@ const color = css({
 });
 
 const unavailableColor = css({
-	color: "#909090",
+	color: "#fff",
 });
 
-interface BottomAppearanceProps {
-	children: ReactNode;
-	order: number;
-}
-
-const BottomAppearance: React.FC<BottomAppearanceProps> = ({
-	children,
-	order,
-}) => {
+const FadeLink: React.FC<{
+	children: React.ReactNode;
+	className?: string;
+	onClick: () => void;
+}> = ({ children, onClick, className }) => {
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{
-				duration: 0.5,
-				delay: 0.2 * order,
-				ease: "easeOut",
-			}}
-		>
+		<span onClick={onClick} style={{ cursor: "pointer" }} className={className}>
 			{children}
-		</motion.div>
+		</span>
 	);
 };
 
 export default function Home() {
+	const router = useRouter();
+	const [isExiting, setIsExiting] = useState(false);
+
+	const handleLinkClick = (href: string) => {
+		setIsExiting(true);
+		setTimeout(() => {
+			router.push(href);
+		}, 500);
+	};
+
 	return (
-		<div className={`${fullScreenSize} ${color} ${Inknut400.className}`}>
+		<motion.div
+			initial={{ opacity: 1 }}
+			animate={{ opacity: isExiting ? 0 : 1 }}
+			transition={{ duration: 0.5 }}
+			className={`${fullScreenSize} ${color} ${Inknut400.className}`}
+		>
 			<motion.div
 				initial={{
 					opacity: 0,
@@ -79,14 +86,7 @@ export default function Home() {
 					height: "100%",
 				})}
 			>
-				<Image
-					className={backgroundImageStyle}
-					src={background}
-					alt="background image"
-					fill
-					style={{ objectFit: "cover" }}
-				/>
-				<div className={backgroundOverlayStyle} />
+				<BackgroundImage />
 			</motion.div>
 			<div
 				className={css({
@@ -111,10 +111,20 @@ export default function Home() {
 					})}
 				>
 					<BottomAppearance order={4}>
-						<a className={unavailableColor}>About</a>
+						<FadeLink
+							onClick={() => handleLinkClick("/about")}
+							className={unavailableColor}
+						>
+							About
+						</FadeLink>
 					</BottomAppearance>
 					<BottomAppearance order={5}>
-						<a className={unavailableColor}>Works</a>
+						<FadeLink
+							onClick={() => handleLinkClick("/works")}
+							className={unavailableColor}
+						>
+							Works
+						</FadeLink>
 					</BottomAppearance>
 					<BottomAppearance order={6}>
 						<a className={unavailableColor}>Blog</a>
@@ -142,6 +152,6 @@ export default function Home() {
 					</BottomAppearance>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 }
