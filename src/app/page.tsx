@@ -4,7 +4,7 @@ import { css } from "../../styled-system/css";
 import Image from "next/image";
 import { Inknut_Antiqua } from "next/font/google";
 import * as motion from "framer-motion/client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { BottomAppearance } from "../components/BottomAppearance";
 import { BackgroundImage } from "../components/BackgroundImage";
@@ -14,29 +14,15 @@ const Inknut400 = Inknut_Antiqua({
 	subsets: ["latin"],
 });
 
-const backgroundImageStyle = css({
-	position: "relative",
-	width: "100%",
-	height: "100%",
-	zIndex: -2,
-});
-const backgroundOverlayStyle = css({
-	position: "absolute",
-	backgroundColor: "rgba(0, 0, 0, 0.41)",
-	top: 0,
-	left: 0,
-	width: "100%",
-	height: "100%",
-	zIndex: -1,
-});
-
 const fullScreenSize = css({
 	height: "100dvh",
 	width: "100dvw",
+	overflow: "hidden",
 });
 
-const color = css({
+const mainCss = css({
 	color: "#fff",
+	userSelect: "none",
 });
 
 const unavailableColor = css({
@@ -66,12 +52,28 @@ export default function Home() {
 		}, 500);
 	};
 
+	useEffect(() => {
+		const preventScroll = (event: { preventDefault: () => void }) => {
+			event.preventDefault();
+		};
+		document.body.addEventListener("touchmove", preventScroll, {
+			passive: false,
+		});
+		document.body.addEventListener("wheel", preventScroll, {
+			passive: false,
+		});
+		return () => {
+			document.body.removeEventListener("touchmove", preventScroll);
+			document.body.removeEventListener("wheel", preventScroll);
+		};
+	}, []);
+
 	return (
 		<motion.div
-			initial={{ opacity: 1 }}
+			initial={{ opacity: 0 }}
 			animate={{ opacity: isExiting ? 0 : 1 }}
 			transition={{ duration: 0.5 }}
-			className={`${fullScreenSize} ${color} ${Inknut400.className}`}
+			className={`${fullScreenSize} ${mainCss} ${Inknut400.className}`}
 		>
 			<motion.div
 				initial={{
