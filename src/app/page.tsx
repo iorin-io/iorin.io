@@ -122,7 +122,7 @@ export default function Home() {
 						<FadeLink onClick={() => handleLinkClick("/about")}>About</FadeLink>
 					</BottomAppearance>
 					<BottomAppearance order={5}>
-						<a className={unavailableColor}>Blog</a>
+						<a className={unavailableColor}>Works</a>
 					</BottomAppearance>
 					<BottomAppearance order={6}>
 						<a className={unavailableColor}>Blog</a>
