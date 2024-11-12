@@ -2,12 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { css } from "../../styled-system/css";
-import { New_Tegomin } from "next/font/google";
-
-const NewTegominFont = New_Tegomin({
-	weight: "400",
-	subsets: ["latin"],
-});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +12,6 @@ export const metadata: Metadata = {
 
 const background = css({
 	backgroundColor: "#fffaf0",
-	color: "#388679",
 });
 
 export default function RootLayout({
@@ -28,11 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${inter.className} ${background} ${NewTegominFont.className}`}
-			>
-				{children}
-			</body>
+			<body className={`${inter.className} ${background}`}>{children}</body>
 		</html>
 	);
 }

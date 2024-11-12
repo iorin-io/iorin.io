@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { New_Tegomin } from "next/font/google";
 import { css } from "../../../styled-system/css";
 
 const maincss = css({
@@ -31,14 +30,9 @@ const uldisc = css({
 	lineHeight: "1.5",
 });
 
-const NewTegominFont = New_Tegomin({
-	weight: "400",
-	subsets: ["latin"],
-});
-
 export default function Home() {
 	return (
-		<main className={`${NewTegominFont.className} ${maincss}`}>
+		<main className={`${maincss}`}>
 			<h1 className={`${h1css}`}>About</h1>
 			<div>
 				<h2 className={h2css}>趣味</h2>
