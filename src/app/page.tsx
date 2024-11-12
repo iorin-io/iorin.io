@@ -26,7 +26,7 @@ const mainCss = css({
 });
 
 const unavailableColor = css({
-	color: "#fff",
+	color: "#909090",
 });
 
 const FadeLink: React.FC<{
@@ -35,9 +35,15 @@ const FadeLink: React.FC<{
 	onClick: () => void;
 }> = ({ children, onClick, className }) => {
 	return (
-		<span onClick={onClick} style={{ cursor: "pointer" }} className={className}>
-			{children}
-		</span>
+		<motion.div whileHover={{ scale: 1.1 }}>
+			<span
+				onClick={onClick}
+				style={{ cursor: "pointer" }}
+				className={className}
+			>
+				{children}
+			</span>
+		</motion.div>
 	);
 };
 
@@ -113,20 +119,10 @@ export default function Home() {
 					})}
 				>
 					<BottomAppearance order={4}>
-						<FadeLink
-							onClick={() => handleLinkClick("/about")}
-							className={unavailableColor}
-						>
-							About
-						</FadeLink>
+						<FadeLink onClick={() => handleLinkClick("/about")}>About</FadeLink>
 					</BottomAppearance>
 					<BottomAppearance order={5}>
-						<FadeLink
-							onClick={() => handleLinkClick("/works")}
-							className={unavailableColor}
-						>
-							Works
-						</FadeLink>
+						<a className={unavailableColor}>Blog</a>
 					</BottomAppearance>
 					<BottomAppearance order={6}>
 						<a className={unavailableColor}>Blog</a>
