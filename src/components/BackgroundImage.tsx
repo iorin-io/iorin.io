@@ -21,15 +21,14 @@ const backgroundOverlayStyle = css({
 export const BackgroundImage = () => (
 	<div>
 		<Image
-            className={backgroundImageStyle}
-            src={background}
-            alt="background image"
-            fill
-            style={{
-                objectFit: "cover",
-                maxWidth: "100%",
-                height: "auto"
-            }} />
+			className={backgroundImageStyle}
+			src={background}
+			alt="background image"
+			fill
+			style={{
+				objectFit: "cover",
+			}}
+		/>
 		<div className={backgroundOverlayStyle} />
 	</div>
 );

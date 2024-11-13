@@ -74,13 +74,13 @@ export default function Home() {
 	}, []);
 
 	return (
-        (<motion.div
+		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: isExiting ? 0 : 1 }}
 			transition={{ duration: 0.5 }}
 			className={`${fullScreenSize} ${mainCss} ${Inknut400.className}`}
 		>
-            <motion.div
+			<motion.div
 				initial={{
 					opacity: 0,
 				}}
@@ -95,7 +95,7 @@ export default function Home() {
 			>
 				<BackgroundImage />
 			</motion.div>
-            <div
+			<div
 				className={css({
 					position: "absolute",
 					bottom: 0,
@@ -164,22 +164,23 @@ export default function Home() {
 					})}
 				>
 					<Image
-                        src="/dere.png"
-                        alt="iorin"
-                        onClick={() => handleLinkClick("/about")}
-                        width={180}
-                        height={180}
-                        className={css({
+						src="/dere.png"
+						alt="iorin"
+						onClick={() => handleLinkClick("/about")}
+						width={180}
+						height={180}
+						className={css({
 							cursor: "pointer",
 							visibility: {
 								base: "hidden",
 								sm: "visible",
 							},
 						})}
-                        style={{
-                            maxWidth: "100%",
-                            height: "auto"
-                        }} />
+						style={{
+							maxWidth: "100%",
+							height: "auto",
+						}}
+					/>
 					<h1
 						className={css({
 							fontSize: {
@@ -192,6 +193,6 @@ export default function Home() {
 					</h1>
 				</motion.div>
 			</div>
-        </motion.div>)
-    );
+		</motion.div>
+	);
 }
