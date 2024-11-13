@@ -1,13 +1,8 @@
 import fs from "fs";
 import path from "path";
+import { type NextApiResponse } from "next";
 
-export default function handler(res: {
-	status: (arg0: number) => {
-		(): any;
-		new (): any;
-		json: { (arg0: { files?: string[]; error?: string }): void; new (): any };
-	};
-}) {
+export default function handler(res: NextApiResponse) {
 	const contentDir = path.join(process.cwd(), "public/content");
 	try {
 		// contentフォルダの一覧を取得
