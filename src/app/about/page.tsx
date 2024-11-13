@@ -122,8 +122,14 @@ export default function Home() {
 				<div className={profileCss}>
 					<div
 						className={css({
-							width: "25dvw",
-							height: "25dvw",
+							width: {
+								sm: "180px",
+								base: "25dvw",
+							},
+							height: {
+								sm: "180px",
+								base: "25dvw",
+							},
 						})}
 					>
 						<Image
