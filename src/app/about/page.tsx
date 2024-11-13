@@ -9,40 +9,53 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const mainCss = css({
-	fontSize: "1.4rem",
-	lineHeight: "1.6",
+	fontSize: {
+		sm: "22.4px",
+		base: "14px",
+	},
+	lineHeight: "25.6px",
 	margin: "0 auto",
 	maxWidth: "800px",
-	padding: "2rem",
+	padding: "32px",
 });
 
 const h1css = css({
-	fontSize: "3rem",
-	marginBottom: "2rem",
+	fontSize: {
+		sm: "48px",
+		base: "28px",
+	},
+	marginBottom: "32px",
 });
 
 const h2css = css({
-	fontSize: "2rem",
-	marginTop: "2rem",
-	marginBottom: "1rem",
+	fontSize: {
+		sm: "32px",
+		base: "20px",
+	},
+	marginTop: "32px",
+	marginBottom: "16px",
 	borderBottom: "2px solid #AFC9BF",
-	paddingBottom: "0.5rem",
+	paddingBottom: "8px",
 });
 
 const sectionCss = css({
-	marginBottom: "3rem",
+	marginBottom: "48px",
 });
 
 const profileCss = css({
 	display: "flex",
 	alignItems: "center",
-	gap: "2rem",
-	marginBottom: "2rem",
+	gap: {
+		sm: "32px",
+		base: "16px",
+	},
+
+	marginBottom: "32px",
 });
 
 const ulCss = css({
 	padding: "0 0 0 20px",
-	marginBottom: "1rem",
+	marginBottom: "16px",
 });
 
 const ulCircle = css({
@@ -53,7 +66,7 @@ const ulCircle = css({
 const ulDisc = css({
 	padding: "0 0 0 40px",
 	listStyleType: "disc",
-	lineHeight: "1.5",
+	lineHeight: "24px",
 });
 
 const Inknut400 = Inknut_Antiqua({
@@ -75,10 +88,10 @@ const InViewPortAppearance: React.FC<InViewPortAppearanceProp> = ({
 }) => {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 20 }} // 初期状態: 不透明度0、少し下の位置
-			whileInView={{ opacity: 1, y: 0 }} // ビューポートに入ったら不透明度1、元の位置に移動
-			transition={{ duration: 0.6, ease: "easeOut" }} // アニメーションの設定
-			viewport={{ once: true, amount: 0.2 }} // 一度だけトリガーし、20%がビューポートに入ったら発火
+			initial={{ opacity: 0, y: 20 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.6, ease: "easeOut" }}
+			viewport={{ once: true, amount: 0.2 }}
 		>
 			{children}
 		</motion.div>
@@ -107,7 +120,20 @@ export default function Home() {
 				<h1 className={`${h1css} ${Inknut400.className}`}>About</h1>
 
 				<div className={profileCss}>
-					<Image src="/dere.png" alt="iorin" width={180} height={180} />
+					<div
+						className={css({
+							width: "25dvw",
+							height: "25dvw",
+						})}
+					>
+						<Image
+							src="/dere.png"
+							alt="iorin"
+							width={180}
+							height={180}
+							layout="responsive"
+						/>
+					</div>
 					<div>
 						<p>こんにちは！いおりです</p>
 						<p>書道やWebやカメラが好きです</p>
