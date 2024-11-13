@@ -110,13 +110,13 @@ export default function Home() {
 	};
 
 	return (
-		<motion.div
+        (<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: isExiting ? 0 : 1 }}
 			transition={{ duration: 0.5 }}
 			className={css({ color: "#2F6F5E" })}
 		>
-			<div className={`${mainCss} ${Kiwi400.className}`}>
+            <div className={`${mainCss} ${Kiwi400.className}`}>
 				<h1 className={`${h1css} ${Inknut400.className}`}>About</h1>
 
 				<div className={profileCss}>
@@ -133,12 +133,15 @@ export default function Home() {
 						})}
 					>
 						<Image
-							src="/dere.png"
-							alt="iorin"
-							width={180}
-							height={180}
-							layout="responsive"
-						/>
+                            src="/dere.png"
+                            alt="iorin"
+                            width={180}
+                            height={180}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto"
+                            }} />
 					</div>
 					<div>
 						<p>こんにちは！いおりです</p>
@@ -199,6 +202,6 @@ export default function Home() {
 					</div>
 				</InViewPortAppearance>
 			</div>
-		</motion.div>
-	);
+        </motion.div>)
+    );
 }

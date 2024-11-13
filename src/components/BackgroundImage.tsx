@@ -25,7 +25,9 @@ export const BackgroundImage = () => (
 			src={background}
 			alt="background image"
 			fill
-			style={{ objectFit: "cover" }}
+			style={{
+				objectFit: "cover",
+			}}
 		/>
 		<div className={backgroundOverlayStyle} />
 	</div>
