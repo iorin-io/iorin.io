@@ -38,8 +38,7 @@ const FadeLink: React.FC<{
 		<motion.div whileHover={{ scale: 1.1 }}>
 			<span
 				onClick={onClick}
-				style={{ cursor: "pointer" }}
-				className={className}
+				className={`${className} ${css({ cursor: "pointer" })}`}
 			>
 				{children}
 			</span>
@@ -106,15 +105,22 @@ export default function Home() {
 					flexDirection: "row",
 					width: "100%",
 					padding: "50px",
+					height: "100dvh",
 				})}
 			>
 				<div
 					className={css({
-						fontSize: "28px",
+						fontSize: {
+							base: "18px",
+							sm: "28px",
+						},
 						display: "flex",
 						flexDirection: "column",
 						"& > div": {
-							margin: "25px 0",
+							margin: {
+								sm: "25px 0",
+								base: "10px 0",
+							},
 						},
 					})}
 				>
@@ -134,21 +140,55 @@ export default function Home() {
 						<a className={unavailableColor}>Contact</a>
 					</BottomAppearance>
 				</div>
-				<div
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 1.5, delay: 0.5 }}
 					className={css({
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "center",
 						alignItems: "center",
+						position: {
+							base: "absolute",
+							sm: "static",
+						},
+						right: {
+							base: "0",
+							sm: "auto",
+						},
+						top: {
+							base: "-130",
+							sm: "auto",
+						},
 					})}
 				>
-					<BottomAppearance order={9}>
-						<Image src="/dere.png" alt="iorin" width={180} height={180} />
-					</BottomAppearance>
-					<BottomAppearance order={10}>
-						<h1 className={css({ fontSize: "38px" })}>iorin.io</h1>
-					</BottomAppearance>
-				</div>
+					<Image
+						src="/dere.png"
+						alt="iorin"
+						onClick={() => handleLinkClick("/about")}
+						width={180}
+						height={180}
+						className={css({
+							cursor: "pointer",
+							visibility: {
+								base: "hidden",
+								sm: "visible",
+							},
+						})}
+					/>
+
+					<h1
+						className={css({
+							fontSize: {
+								base: "32px",
+								sm: "38px",
+							},
+						})}
+					>
+						iorin.io
+					</h1>
+				</motion.div>
 			</div>
 		</motion.div>
 	);
