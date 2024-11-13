@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import background from "/public/background.webp";
 import { css } from "../../styled-system/css";
 
@@ -21,12 +21,15 @@ const backgroundOverlayStyle = css({
 export const BackgroundImage = () => (
 	<div>
 		<Image
-			className={backgroundImageStyle}
-			src={background}
-			alt="background image"
-			fill
-			style={{ objectFit: "cover" }}
-		/>
+            className={backgroundImageStyle}
+            src={background}
+            alt="background image"
+            fill
+            style={{
+                objectFit: "cover",
+                maxWidth: "100%",
+                height: "auto"
+            }} />
 		<div className={backgroundOverlayStyle} />
 	</div>
 );
