@@ -8,7 +8,7 @@ import { Kiwi_Maru } from "next/font/google";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-const mainCss = css({
+const containerCss = css({
 	fontSize: {
 		sm: "22.4px",
 		base: "14px",
@@ -24,7 +24,8 @@ const h1css = css({
 		sm: "48px",
 		base: "28px",
 	},
-	marginBottom: "32px",
+	marginTop: "32px",
+	marginBottom: "64px",
 });
 
 const h2css = css({
@@ -116,7 +117,7 @@ export default function Home() {
 			transition={{ duration: 0.5 }}
 			className={css({ color: "#2F6F5E" })}
 		>
-			<div className={`${mainCss} ${Kiwi400.className}`}>
+			<div className={`${containerCss} ${Kiwi400.className}`}>
 				<h1 className={`${h1css} ${Inknut400.className}`}>About</h1>
 
 				<div className={profileCss}>

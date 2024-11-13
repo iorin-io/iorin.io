@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { BottomAppearance } from "../components/BottomAppearance";
 import { BackgroundImage } from "../components/BackgroundImage";
+import { OnClickSpan } from "../components/OnClickSpan";
 
 const Inknut400 = Inknut_Antiqua({
 	weight: "400",
@@ -28,23 +29,6 @@ const mainCss = css({
 const unavailableColor = css({
 	color: "#909090",
 });
-
-const FadeLink: React.FC<{
-	children: React.ReactNode;
-	className?: string;
-	onClick: () => void;
-}> = ({ children, onClick, className }) => {
-	return (
-		<motion.div whileHover={{ scale: 1.1 }}>
-			<span
-				onClick={onClick}
-				className={`${className} ${css({ cursor: "pointer" })}`}
-			>
-				{children}
-			</span>
-		</motion.div>
-	);
-};
 
 export default function Home() {
 	const router = useRouter();
@@ -125,13 +109,23 @@ export default function Home() {
 					})}
 				>
 					<BottomAppearance order={4}>
-						<FadeLink onClick={() => handleLinkClick("/about")}>About</FadeLink>
+						<OnClickSpan
+							onClick={() => handleLinkClick("/about")}
+							whileHover={{ scale: 1.1 }}
+						>
+							About
+						</OnClickSpan>
 					</BottomAppearance>
 					<BottomAppearance order={5}>
 						<a className={unavailableColor}>Works</a>
 					</BottomAppearance>
 					<BottomAppearance order={6}>
-						<a className={unavailableColor}>Blog</a>
+						<OnClickSpan
+							onClick={() => handleLinkClick("/blog")}
+							whileHover={{ scale: 1.1 }}
+						>
+							Blog
+						</OnClickSpan>
 					</BottomAppearance>
 					<BottomAppearance order={7}>
 						<a className={unavailableColor}>Photo</a>
