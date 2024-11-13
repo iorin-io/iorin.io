@@ -2,7 +2,6 @@
 	"extends": [
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:tailwindcss/recommended",
 		"prettier"
 	],
 	"parser": "@typescript-eslint/parser",
@@ -25,7 +24,6 @@
 			}
 		],
 		"object-shorthand": "error",
-		"tailwindcss/no-custom-classname": "off",
 		"react/jsx-curly-brace-presence": "error",
 		"react/self-closing-comp": [
 			"error",
