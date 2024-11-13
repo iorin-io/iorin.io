@@ -102,12 +102,12 @@ export default function Home() {
 	const router = useRouter();
 	const [isExiting, setIsExiting] = useState(false);
 
-	const handleLinkClick = (href: string) => {
-		setIsExiting(true);
-		setTimeout(() => {
-			router.push(href);
-		}, 500);
-	};
+	// const handleLinkClick = (href: string) => {
+	// 	setIsExiting(true);
+	// 	setTimeout(() => {
+	// 		router.push(href);
+	// 	}, 500);
+	// };
 
 	return (
 		<motion.div
