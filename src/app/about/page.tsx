@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Inknut_Antiqua } from "next/font/google";
 import { Kiwi_Maru } from "next/font/google";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const mainCss = css({
 	fontSize: {

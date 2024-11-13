@@ -1,7 +1,7 @@
 "use client";
 
 import { css } from "../../styled-system/css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Inknut_Antiqua } from "next/font/google";
 import * as motion from "framer-motion/client";
 import { useEffect, useState } from "react";

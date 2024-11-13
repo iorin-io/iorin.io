@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import background from "/public/background.webp";
 import { css } from "../../styled-system/css";
 
