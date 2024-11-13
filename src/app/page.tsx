@@ -111,15 +111,15 @@ export default function Home() {
 				<div
 					className={css({
 						fontSize: {
-							base: "18px",
+							base: "3dvh",
 							sm: "28px",
 						},
 						display: "flex",
 						flexDirection: "column",
 						"& > div": {
 							margin: {
-								sm: "25px 0",
-								base: "10px 0",
+								sm: "2.4dvh 0",
+								base: "1.8dvh 0",
 							},
 						},
 					})}
@@ -154,11 +154,11 @@ export default function Home() {
 							sm: "static",
 						},
 						right: {
-							base: "0",
+							base: "6",
 							sm: "auto",
 						},
 						top: {
-							base: "-130",
+							base: "-134",
 							sm: "auto",
 						},
 					})}
@@ -177,7 +177,6 @@ export default function Home() {
 							},
 						})}
 					/>
-
 					<h1
 						className={css({
 							fontSize: {
