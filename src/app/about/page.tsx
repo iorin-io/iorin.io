@@ -193,8 +193,9 @@ export default function Home() {
 							</li>
 							<li>　同　局長（2023/01~2023/12）</li>
 							<li>Open Hack U 2024 TOKYO　優秀賞（2024/02）</li>
-							<li>株式会社 Kaizen Platform インターン（2024/06~）</li>
+							<li>株式会社 Kaizen Platform（2024/06~）</li>
 							<li>2024年度IPA未踏IT人材発掘・育成事業 採択（2024/06~）</li>
+							<li>株式会社 TAIAN (2024/11~)</li>
 						</ul>
 					</div>
 				</InViewPortAppearance>
