@@ -1,4 +1,4 @@
-export const runtime = "edge";
+export const runtime = "node";
 
 import fs from "fs";
 import path from "path";
