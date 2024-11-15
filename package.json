@@ -4,8 +4,9 @@
 	"private": true,
 	"scripts": {
 		"prepare": "panda codegen",
-		"dev": "next dev",
-		"build": "next build",
+		"generate:blog-data": "ts-node scripts/generateBlogData.ts",
+		"dev": "npm run generate:blog-data && next dev",
+		"build": "npm run generate:blog-data && next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -22,17 +23,20 @@
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-markdown": "^9.0.1",
+		"react-syntax-highlighter": "^15.6.1",
+		"remark-gfm": "^4.0.0",
 		"sanitize-html": "^2.13.0"
 	},
 	"devDependencies": {
 		"@pandacss/dev": "^0.37.2",
-		"@types/node": "^20",
+		"@types/node": "^20.17.6",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
 		"@types/sanitize-html": "^2.11.0",
 		"eslint": "^8",
 		"eslint-config-next": "14.2.3",
 		"prettier": "3.2.5",
-		"typescript": "^5"
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
 	}
 }
