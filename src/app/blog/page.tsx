@@ -43,11 +43,34 @@ const ulCss = css({
 });
 
 const liCss = css({
-	marginBottom: "8px",
+	marginBottom: "20px",
 });
 
 const linkCss = css({
 	// textDecoration: "none",
+});
+
+const containerDivCss = css({
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "flex-start",
+	borderBottom: "1px solid #e0e0e0",
+	width: "100%",
+});
+
+const titleCss = css({
+	fontSize: "18px",
+	fontWeight: "bold",
+	color: "#2F6F5E",
+	marginBottom: "4px",
+	display: "block",
+});
+
+const dateCss = css({
+	fontSize: "14px",
+	color: "#888",
+	display: "block",
+	marginBottom: "12px",
 });
 
 const MarkdownRenderer = () => {
@@ -97,7 +120,10 @@ const MarkdownRenderer = () => {
 								onClick={() => handleLinkClick(`/blog/${article.slug}`)}
 								className={linkCss}
 							>
-								<strong>{article.title}</strong> - {article.date}
+								<div className={containerDivCss}>
+									<span className={titleCss}>{article.title}</span>
+									<span className={dateCss}>{article.date}</span>
+								</div>
 							</OnClickSpan>
 						</li>
 					))}
