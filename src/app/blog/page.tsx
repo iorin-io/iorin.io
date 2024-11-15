@@ -90,12 +90,12 @@ const MarkdownRenderer = () => {
 	useEffect(() => {
 		const fetchArticles = async () => {
 			try {
-				const response = await fetch("/api/blog-files");
+				const response = await fetch("/blog/blogData.json");
 				if (!response.ok) {
 					throw new Error("Failed to fetch content files");
 				}
 				const data = await response.json();
-				setArticles(data.articles);
+				setArticles(data);
 			} catch (error) {
 				console.error(error);
 			}
