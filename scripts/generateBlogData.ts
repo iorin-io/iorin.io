@@ -3,7 +3,7 @@ const path = require("path");
 const matter = require("gray-matter");
 
 const contentDir = path.join(process.cwd(), "public/blog");
-const outputFile = path.join(process.cwd(), "public/blogData.json");
+const outputFile = path.join(process.cwd(), "public/blog/blogData.json");
 
 const generateBlogData = () => {
 	const files = fs

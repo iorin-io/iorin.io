@@ -2,9 +2,7 @@ export const runtime = "edge";
 
 export async function GET() {
 	try {
-		const res = await fetch(
-			`${process.env.NEXT_PUBLIC_BASE_URL}/blogData.json`,
-		);
+		const res = await fetch(`/blog/blogData.json`);
 		const articles = await res.json();
 
 		return new Response(JSON.stringify({ articles }), {
