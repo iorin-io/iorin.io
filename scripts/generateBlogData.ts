@@ -10,7 +10,7 @@ const generateBlogData = () => {
 		.readdirSync(contentDir)
 		.filter((file: string) => file.endsWith(".md"));
 
-	const articles = files.map((file: string) => {
+	let articles = files.map((file: string) => {
 		const filePath = path.join(contentDir, file);
 		const fileContent = fs.readFileSync(filePath, "utf-8");
 		const { data } = matter(fileContent);
@@ -21,6 +21,15 @@ const generateBlogData = () => {
 			date: data.date || "no date",
 		};
 	});
+
+	articles = articles.sort(
+		(
+			a: { date: string | number | Date },
+			b: { date: string | number | Date },
+		) => {
+			return new Date(b.date).getTime() - new Date(a.date).getTime();
+		},
+	);
 
 	fs.writeFileSync(outputFile, JSON.stringify(articles, null, 2));
 };
