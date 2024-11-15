@@ -1,41 +1,20 @@
-export const runtime = "nodejs";
-
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+export const runtime = "edge";
 
 export async function GET() {
-	const contentDir = path.join(process.cwd(), "public/blog");
-
 	try {
-		const files = fs
-			.readdirSync(contentDir)
-			.filter((file) => file.endsWith(".md"));
-
-		const articles = files
-			.map((file) => {
-				const filePath = path.join(contentDir, file);
-				const fileContent = fs.readFileSync(filePath, "utf-8");
-
-				const { data } = matter(fileContent);
-
-				return {
-					slug: file.replace(".md", ""),
-					title: data.title || "no title",
-					date: data.date || "no date",
-				};
-			})
-			.filter(Boolean)
-			.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+		const res = await fetch(
+			`${process.env.NEXT_PUBLIC_BASE_URL}/blogData.json`,
+		);
+		const articles = await res.json();
 
 		return new Response(JSON.stringify({ articles }), {
 			status: 200,
 			headers: { "Content-Type": "application/json" },
 		});
 	} catch (error) {
-		console.error("Error reading content directory:", error);
+		console.error("Error fetching blog data:", error);
 		return new Response(
-			JSON.stringify({ error: "Unable to fetch content files" }),
+			JSON.stringify({ error: "Unable to fetch blog data" }),
 			{
 				status: 500,
 				headers: { "Content-Type": "application/json" },

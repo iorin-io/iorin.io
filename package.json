@@ -5,9 +5,10 @@
 	"scripts": {
 		"prepare": "panda codegen",
 		"dev": "next dev",
-		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"generate:blog-data": "ts-node scripts/generateBlogData.ts",
+		"build": "npm run generate:blog-data && next build"
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^7.7.1",
