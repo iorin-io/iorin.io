@@ -1,39 +1,23 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { css } from "../../../../styled-system/css";
-import { Kiwi_Maru, Inknut_Antiqua } from "next/font/google";
-import { motion } from "framer-motion";
+import { Kiwi_Maru } from "next/font/google";
 
 const Kiwi400 = Kiwi_Maru({
 	weight: "400",
 	subsets: ["latin"],
 });
 
-const MarkdownRenderer = () => {
+const MarkdownRenderer = ({ article }: { article: string }) => {
 	const [markdownContent, setMarkdownContent] = useState("");
-	const searchParams = useSearchParams();
-	const slug = searchParams.get("art");
-
-	const router = useRouter();
 	const [isExiting, setIsExiting] = useState(false);
 
-	// const handleLinkClick = (href: string) => {
-	// 	setIsExiting(true);
-	// 	setTimeout(() => {
-	// 		router.push(href);
-	// 	}, 500);
-	// };
-
 	useEffect(() => {
-		if (!slug) {
-			router.push("/blog");
-			return;
-		}
 		const fetchMarkdown = async () => {
 			try {
-				const response = await fetch(`/content/${slug}.md`);
+				const response = await fetch(`/content/${article}.md`);
 				if (!response.ok) {
 					throw new Error("Markdown file could not be fetched");
 				}
@@ -45,7 +29,7 @@ const MarkdownRenderer = () => {
 		};
 
 		fetchMarkdown();
-	}, [slug]);
+	}, [article]);
 
 	return (
 		<motion.div
@@ -59,10 +43,4 @@ const MarkdownRenderer = () => {
 	);
 };
 
-export default function Page() {
-	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<MarkdownRenderer />
-		</Suspense>
-	);
-}
+export default MarkdownRenderer;
