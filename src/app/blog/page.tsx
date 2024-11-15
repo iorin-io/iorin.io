@@ -1,7 +1,6 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import ReactMarkdown from "react-markdown";
 import { css } from "../../../styled-system/css";
 import { Kiwi_Maru, Inknut_Antiqua } from "next/font/google";
 import { motion } from "framer-motion";
