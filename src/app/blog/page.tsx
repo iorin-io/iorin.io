@@ -95,9 +95,7 @@ const MarkdownRenderer = () => {
 						return (
 							<li key={index} className={liCss}>
 								<OnClickSpan
-									onClick={() =>
-										handleLinkClick(`/blog/article?art=${fileNameWithoutExt}`)
-									}
+									onClick={() => handleLinkClick(`/blog/${fileNameWithoutExt}`)}
 									className={linkCss}
 								>
 									{fileNameWithoutExt}
