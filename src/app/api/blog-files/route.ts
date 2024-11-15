@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 export async function GET() {
-	const contentDir = path.join(process.cwd(), "public/content");
+	const contentDir = path.join(process.cwd(), "public/blog");
 	try {
 		// contentフォルダの一覧を取得
 		const files = fs

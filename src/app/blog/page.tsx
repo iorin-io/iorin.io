@@ -66,7 +66,7 @@ const MarkdownRenderer = () => {
 	useEffect(() => {
 		const fetchFileList = async () => {
 			try {
-				const response = await fetch("/api/content-files");
+				const response = await fetch("/api/blog-files");
 				if (!response.ok) {
 					throw new Error("Failed to fetch content files");
 				}
