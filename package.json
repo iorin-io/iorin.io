@@ -4,11 +4,11 @@
 	"private": true,
 	"scripts": {
 		"prepare": "panda codegen",
-		"dev": "next dev",
-		"start": "next start",
-		"lint": "next lint",
 		"generate:blog-data": "ts-node scripts/generateBlogData.ts",
-		"build": "npm run generate:blog-data && next build"
+		"dev": "npm run generate:blog-data && next dev",
+		"build": "npm run generate:blog-data && next build",
+		"start": "next start",
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@typescript-eslint/eslint-plugin": "^7.7.1",
