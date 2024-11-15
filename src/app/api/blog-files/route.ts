@@ -1,4 +1,4 @@
-export const runtime = "node";
+export const runtime = "nodejs";
 
 import fs from "fs";
 import path from "path";
