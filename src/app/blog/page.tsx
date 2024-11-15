@@ -51,8 +51,9 @@ const linkCss = css({
 });
 
 const MarkdownRenderer = () => {
-	const [fileList, setFileList] = useState<string[]>([]);
-
+	const [articles, setArticles] = useState<
+		{ slug: string; title: string; date: string }[]
+	>([]);
 	const router = useRouter();
 	const [isExiting, setIsExiting] = useState(false);
 
@@ -64,20 +65,20 @@ const MarkdownRenderer = () => {
 	};
 
 	useEffect(() => {
-		const fetchFileList = async () => {
+		const fetchArticles = async () => {
 			try {
 				const response = await fetch("/api/blog-files");
 				if (!response.ok) {
 					throw new Error("Failed to fetch content files");
 				}
 				const data = await response.json();
-				setFileList(data.files as string[]);
+				setArticles(data.articles);
 			} catch (error) {
 				console.error(error);
 			}
 		};
 
-		fetchFileList();
+		fetchArticles();
 	}, []);
 
 	return (
@@ -90,19 +91,16 @@ const MarkdownRenderer = () => {
 			<div className={containerCss}>
 				<h1 className={`${h1css} ${Inknut400.className}`}>Blog</h1>
 				<ul className={ulCss}>
-					{fileList.map((file, index) => {
-						const fileNameWithoutExt = file.replace(".md", "");
-						return (
-							<li key={index} className={liCss}>
-								<OnClickSpan
-									onClick={() => handleLinkClick(`/blog/${fileNameWithoutExt}`)}
-									className={linkCss}
-								>
-									{fileNameWithoutExt}
-								</OnClickSpan>
-							</li>
-						);
-					})}
+					{articles.map((article, index) => (
+						<li key={index} className={liCss}>
+							<OnClickSpan
+								onClick={() => handleLinkClick(`/blog/${article.slug}`)}
+								className={linkCss}
+							>
+								<strong>{article.title}</strong> - {article.date}
+							</OnClickSpan>
+						</li>
+					))}
 				</ul>
 			</div>
 		</motion.div>
