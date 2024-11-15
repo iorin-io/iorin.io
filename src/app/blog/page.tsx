@@ -37,7 +37,6 @@ const h1css = css({
 });
 
 const ulCss = css({
-	paddingLeft: "20px",
 	marginBottom: "16px",
 	listStyleType: "none",
 });

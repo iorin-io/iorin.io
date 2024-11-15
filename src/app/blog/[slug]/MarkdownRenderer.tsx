@@ -187,7 +187,13 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 		>
 			<div className={css({ marginBottom: "16px" })}>
 				{metadata.title && (
-					<h1 className={css({ fontSize: "28px", fontWeight: "bold" })}>
+					<h1
+						className={css({
+							fontSize: "28px",
+							fontWeight: "bold",
+							marginBottom: "10px",
+						})}
+					>
 						{metadata.title}
 					</h1>
 				)}
