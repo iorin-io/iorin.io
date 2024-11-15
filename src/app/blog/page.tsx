@@ -121,7 +121,13 @@ const MarkdownRenderer = () => {
 							>
 								<div className={containerDivCss}>
 									<span className={titleCss}>{article.title}</span>
-									<span className={dateCss}>{article.date}</span>
+									<span className={dateCss}>
+										{new Date(article.date).toLocaleDateString("ja-JP", {
+											year: "numeric",
+											month: "long",
+											day: "numeric",
+										})}
+									</span>
 								</div>
 							</OnClickSpan>
 						</li>
