@@ -131,7 +131,12 @@ export default function Home() {
 						<a className={unavailableColor}>Photo</a>
 					</BottomAppearance>
 					<BottomAppearance order={8}>
-						<a className={unavailableColor}>Contact</a>
+						<OnClickSpan
+							onClick={() => handleLinkClick("/contact")}
+							whileHover={{ scale: 1.1 }}
+						>
+							Contact
+						</OnClickSpan>
 					</BottomAppearance>
 				</div>
 				<motion.div
