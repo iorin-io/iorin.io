@@ -5,7 +5,7 @@ import { css } from "../../../styled-system/css";
 import { containerCss, pageTitleCss } from "../page";
 import { SiGithub, SiInstagram, SiX } from "@icons-pack/react-simple-icons";
 import { OnClickSpan } from "@/components/OnClickSpan";
-import { ReactNode, useState } from "react";
+import { type ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 
 const Kiwi400 = Kiwi_Maru({
