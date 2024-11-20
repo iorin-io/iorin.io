@@ -7,6 +7,11 @@ import { Inknut_Antiqua } from "next/font/google";
 import { Kiwi_Maru } from "next/font/google";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import hobbyMd from "./md/hobby.md";
+import careerMd from "./md/career.md";
+import qualificationMd from "./md/qualification.md";
 
 const containerCss = css({
 	fontSize: {
@@ -27,22 +32,6 @@ const h1css = css({
 	marginTop: "24px",
 	marginBottom: "32px",
 	fontWeight: "bold",
-});
-
-const h2css = css({
-	fontSize: {
-		sm: "24px",
-		base: "20px",
-	},
-	marginTop: "24px",
-	marginBottom: "16px",
-	borderBottom: "2px solid #AFC9BF",
-	paddingBottom: "8px",
-	fontWeight: "bold",
-});
-
-const sectionCss = css({
-	marginBottom: "32px",
 });
 
 const profileCss = css({
@@ -88,6 +77,131 @@ const Kiwi400 = Kiwi_Maru({
 interface InViewPortAppearanceProp {
 	children: ReactNode;
 }
+
+const markdownStyles = css({
+	marginBottom: "32px",
+	"& h1": {
+		fontSize: {
+			sm: "28px",
+			base: "24px",
+		},
+		marginTop: "24px",
+		marginBottom: "32px",
+		fontWeight: "bold",
+	},
+	"& h2": {
+		fontSize: {
+			sm: "24px",
+			base: "20px",
+		},
+		marginTop: "24px",
+		marginBottom: "16px",
+		borderBottom: "2px solid #AFC9BF",
+		paddingBottom: "8px",
+		fontWeight: "bold",
+	},
+	"& p": {
+		fontSize: "16px",
+		marginBottom: "16px",
+		lineHeight: "1.6",
+		paddingLeft: "10px",
+		"& img": {
+			display: "block",
+			margin: "16px auto",
+			maxWidth: "100%",
+			height: "auto",
+		},
+	},
+	"& ul": {
+		paddingLeft: "24px",
+		listStyleType: "disc",
+	},
+	"& ol": {
+		paddingLeft: "24px",
+		listStyleType: "decimal",
+	},
+	"& a": {
+		textDecoration: "underline",
+		"&:hover": {},
+	},
+	"& pre": {
+		backgroundColor: "#f5f5f5",
+		padding: "16px",
+		borderRadius: "8px",
+		overflowX: "auto",
+		marginBottom: "16px",
+	},
+	"& code": {
+		fontFamily: "monospace",
+		fontSize: "14px",
+		backgroundColor: "#f5f5f5",
+		padding: "4px 8px",
+		borderRadius: "4px",
+	},
+	"& blockquote": {
+		marginLeft: "16px",
+		borderLeft: "4px solid #d0d7de",
+		fontStyle: "italic",
+		marginBottom: "16px",
+	},
+	"& table": {
+		width: "100%",
+		borderCollapse: "collapse",
+		marginBottom: "16px",
+	},
+	"& th, & td": {
+		border: "1px solid #d0d7de",
+		padding: "8px",
+		textAlign: "left",
+	},
+	"& th": {
+		backgroundColor: "#f5f5f5",
+		fontWeight: "bold",
+	},
+	"& img": {
+		maxWidth: "100%",
+		height: "auto",
+		marginBottom: "16px",
+		display: "block",
+	},
+	"& .contains-task-list": {
+		listStyle: "none",
+		paddingLeft: "0",
+	},
+	"& .task-list-item": {
+		display: "flex",
+		alignItems: "center",
+		marginBottom: "8px",
+	},
+	"& .task-list-item input": {
+		appearance: "none",
+		width: "18px",
+		height: "18px",
+		borderRadius: "4px",
+		marginRight: "8px",
+		display: "inline-block",
+		position: "relative",
+		backgroundColor: "#e0e0e0",
+		borderColor: "#a0a0a0",
+		"&:checked": {
+			backgroundColor: "#2F6F5E",
+		},
+		"&:checked::after": {
+			content: '""',
+			position: "absolute",
+			top: "2px",
+			left: "6px",
+			width: "4px",
+			height: "8px",
+			border: "solid white",
+			borderWidth: "0 2px 2px 0",
+			transform: "rotate(45deg)",
+		},
+	},
+	"& del": {
+		textDecoration: "line-through",
+	},
+});
 
 const InViewPortAppearance: React.FC<InViewPortAppearanceProp> = ({
 	children,
@@ -156,58 +270,19 @@ export default function Home() {
 					</div>
 				</div>
 				<InViewPortAppearance>
-					<div className={sectionCss}>
-						<h2 className={h2css}>趣味</h2>
-						<ul className={`${ulCss} ${ulCircle}`}>
-							<li>書道</li>
-							<li>カメラ</li>
-							<ul className={`${ulCss}`}>
-								<li>ボディ</li>
-								<ul className={`${ulCss} ${ulDisc}`}>
-									<li>Canon EOS Kiss X5</li>
-									<li>FUJIFILM X-S20</li>
-								</ul>
-								<li>レンズ</li>
-								<ul className={`${ulCss} ${ulDisc}`}>
-									<li>Canon EF50mm F1.8 STM</li>
-									<li>TAMRON 17-70mm F/2.8 Di III-A VC RXD Xマウント</li>
-								</ul>
-							</ul>
-							<li>インク・ガラスペン</li>
-							<li>車</li>
-							<ul className={`${ulCss}`}>
-								<li>Copen LA-L880K</li>
-							</ul>
-						</ul>
-					</div>
+					<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
+						{hobbyMd}
+					</ReactMarkdown>
 				</InViewPortAppearance>
 				<InViewPortAppearance>
-					<div className={sectionCss}>
-						<h2 className={h2css}>経歴</h2>
-						<ul className={ulCss}>
-							<li>茨城県立並木中等教育学校 9回生（2016/04~2022/03）</li>
-							<li>第62回日本学生科学賞 中学の部 文部科学大臣賞受賞</li>
-							<li>筑波大学 情報学群 情報メディア創成学類（2022/04~）</li>
-							<li>
-								筑波大学学園祭実行委員会情報メディアシステム局（2022/05~2023/12）
-							</li>
-							<li>　同　局長（2023/01~2023/12）</li>
-							<li>Open Hack U 2024 TOKYO　優秀賞（2024/02）</li>
-							<li>株式会社 Kaizen Platform（2024/06~）</li>
-							<li>2024年度IPA未踏IT人材発掘・育成事業 採択（2024/06~）</li>
-							<li>株式会社 TAIAN (2024/11~)</li>
-						</ul>
-					</div>
+					<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
+						{careerMd}
+					</ReactMarkdown>
 				</InViewPortAppearance>
 				<InViewPortAppearance>
-					<div className={sectionCss}>
-						<h2 className={h2css}>資格等</h2>
-						<ul className={`${ulCss} ${ulCircle}`}>
-							<li>普通自動車第一種運転免許</li>
-							<li>応用情報技術者</li>
-							<li>データベーススペシャリスト</li>
-						</ul>
-					</div>
+					<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
+						{qualificationMd}
+					</ReactMarkdown>
 				</InViewPortAppearance>
 			</div>
 		</motion.div>
