@@ -62,12 +62,10 @@ const markdownStyles = css({
 	"& ul": {
 		paddingLeft: "24px",
 		listStyleType: "disc",
-		marginBottom: "16px",
 	},
 	"& ol": {
 		paddingLeft: "24px",
 		listStyleType: "decimal",
-		marginBottom: "16px",
 	},
 	"& a": {
 		textDecoration: "underline",
