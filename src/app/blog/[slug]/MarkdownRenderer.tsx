@@ -7,7 +7,7 @@ import { css } from "../../../../styled-system/css";
 import { Inknut_Antiqua, Kiwi_Maru } from "next/font/google";
 import remarkGfm from "remark-gfm";
 import matter from "gray-matter";
-import { containerCss, markdownStyles, pageTitleCss } from "@/const/css";
+import { containerCss, pageTitleCss, markdownStyles } from "../../page";
 
 const Kiwi400 = Kiwi_Maru({
 	weight: "400",

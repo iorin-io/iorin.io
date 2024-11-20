@@ -5,7 +5,7 @@ import { css } from "../../../styled-system/css";
 import { Kiwi_Maru, Inknut_Antiqua } from "next/font/google";
 import { motion } from "framer-motion";
 import { OnClickSpan } from "../../components/OnClickSpan";
-import { containerCss, pageTitleCss } from "@/const/css";
+import { containerCss, pageTitleCss } from "../page";
 
 const Kiwi400 = Kiwi_Maru({
 	weight: "400",
@@ -26,11 +26,7 @@ const liCss = css({
 	marginBottom: "20px",
 });
 
-const linkCss = css({
-	// textDecoration: "none",
-});
-
-const containerDivCss = css({
+const flexContainerDivCss = css({
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "flex-start",
@@ -97,9 +93,8 @@ const MarkdownRenderer = () => {
 						<li key={index} className={liCss}>
 							<OnClickSpan
 								onClick={() => handleLinkClick(`/blog/${article.slug}`)}
-								className={linkCss}
 							>
-								<div className={containerDivCss}>
+								<div className={flexContainerDivCss}>
 									<span className={titleCss}>{article.title}</span>
 									<span className={dateCss}>
 										{new Date(article.date).toLocaleDateString("ja-JP", {

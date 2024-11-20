@@ -12,7 +12,7 @@ import remarkGfm from "remark-gfm";
 import hobbyMd from "./md/hobby.md";
 import careerMd from "./md/career.md";
 import qualificationMd from "./md/qualification.md";
-import { containerCss, markdownStyles, pageTitleCss } from "@/const/css";
+import { containerCss, markdownStyles, pageTitleCss } from "../../app/page";
 
 const profileCss = css({
 	display: "flex",
