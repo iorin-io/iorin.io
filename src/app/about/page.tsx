@@ -13,27 +13,6 @@ import hobbyMd from "./md/hobby.md";
 import careerMd from "./md/career.md";
 import qualificationMd from "./md/qualification.md";
 
-const containerCss = css({
-	fontSize: {
-		sm: "16px",
-		base: "14px",
-	},
-	lineHeight: "24px",
-	margin: "0 auto",
-	maxWidth: "800px",
-	padding: "24px",
-});
-
-const h1css = css({
-	fontSize: {
-		sm: "28px",
-		base: "24px",
-	},
-	marginTop: "24px",
-	marginBottom: "32px",
-	fontWeight: "bold",
-});
-
 const profileCss = css({
 	display: "flex",
 	alignItems: "center",
@@ -42,26 +21,6 @@ const profileCss = css({
 		base: "16px",
 	},
 	marginBottom: "24px",
-});
-
-const ulCss = css({
-	padding: "0 0 0 20px",
-	marginBottom: "16px",
-	listStyleType: "disc",
-});
-
-const ulCircle = css({
-	padding: "0 0 0 24px",
-	listStyleType: "circle",
-	marginBottom: "16px",
-	lineHeight: "24px",
-});
-
-const ulDisc = css({
-	padding: "0 0 0 24px",
-	listStyleType: "disc",
-	lineHeight: "24px",
-	marginBottom: "16px",
 });
 
 const Inknut400 = Inknut_Antiqua({
@@ -74,37 +33,45 @@ const Kiwi400 = Kiwi_Maru({
 	subsets: ["latin"],
 });
 
-interface InViewPortAppearanceProp {
-	children: ReactNode;
-}
+const containerCss = css({
+	margin: "0 auto",
+	maxWidth: "800px",
+	padding: "32px",
+});
 
-const markdownStyles = css({
+const pageTitleCss = css({
+	fontSize: {
+		sm: "48px",
+		base: "32px",
+	},
+	marginTop: "24px",
 	marginBottom: "32px",
+});
+const markdownStyles = css({
 	"& h1": {
-		fontSize: {
-			sm: "28px",
-			base: "24px",
-		},
-		marginTop: "24px",
-		marginBottom: "32px",
+		fontSize: "28px",
+		marginBottom: "16px",
 		fontWeight: "bold",
 	},
 	"& h2": {
-		fontSize: {
-			sm: "24px",
-			base: "20px",
-		},
-		marginTop: "24px",
-		marginBottom: "16px",
-		borderBottom: "2px solid #AFC9BF",
-		paddingBottom: "8px",
+		fontSize: "24px",
+		marginBottom: "12px",
+		fontWeight: "bold",
+	},
+	"& h3": {
+		fontSize: "20px",
+		marginBottom: "8px",
+		fontWeight: "bold",
+	},
+	"& h4, & h5": {
+		fontSize: "18px",
+		marginBottom: "8px",
 		fontWeight: "bold",
 	},
 	"& p": {
 		fontSize: "16px",
 		marginBottom: "16px",
-		lineHeight: "1.6",
-		paddingLeft: "10px",
+		lineHeight: "2",
 		"& img": {
 			display: "block",
 			margin: "16px auto",
@@ -115,14 +82,17 @@ const markdownStyles = css({
 	"& ul": {
 		paddingLeft: "24px",
 		listStyleType: "disc",
+		lineHeight: "2",
 	},
 	"& ol": {
 		paddingLeft: "24px",
 		listStyleType: "decimal",
+		lineHeight: "2",
 	},
 	"& a": {
 		textDecoration: "underline",
 		"&:hover": {},
+		lineHeight: "2",
 	},
 	"& pre": {
 		backgroundColor: "#f5f5f5",
@@ -203,6 +173,18 @@ const markdownStyles = css({
 	},
 });
 
+interface InViewPortAppearanceProp {
+	children: ReactNode;
+}
+
+const aboutPageStyles = css({
+	"& h2": {
+		borderBottom: "2px solid #AFC9BF",
+	},
+	"& div": {
+		marginBottom: "32px",
+	},
+});
 const InViewPortAppearance: React.FC<InViewPortAppearanceProp> = ({
 	children,
 }) => {
@@ -234,10 +216,9 @@ export default function Home() {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: isExiting ? 0 : 1 }}
 			transition={{ duration: 0.5 }}
-			className={css({ color: "#2F6F5E" })}
 		>
 			<div className={`${containerCss} ${Kiwi400.className}`}>
-				<h1 className={`${h1css} ${Inknut400.className}`}>About</h1>
+				<h1 className={`${pageTitleCss} ${Inknut400.className}`}>About</h1>
 
 				<div className={profileCss}>
 					<div
@@ -269,21 +250,21 @@ export default function Home() {
 						<p>書道やWebやカメラが好きです</p>
 					</div>
 				</div>
-				<InViewPortAppearance>
-					<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
-						{hobbyMd}
-					</ReactMarkdown>
-				</InViewPortAppearance>
-				<InViewPortAppearance>
-					<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
-						{careerMd}
-					</ReactMarkdown>
-				</InViewPortAppearance>
-				<InViewPortAppearance>
-					<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
-						{qualificationMd}
-					</ReactMarkdown>
-				</InViewPortAppearance>
+				<div className={`${aboutPageStyles} ${markdownStyles}`}>
+					<InViewPortAppearance>
+						<ReactMarkdown remarkPlugins={[remarkGfm]}>{hobbyMd}</ReactMarkdown>
+					</InViewPortAppearance>
+					<InViewPortAppearance>
+						<ReactMarkdown remarkPlugins={[remarkGfm]}>
+							{careerMd}
+						</ReactMarkdown>
+					</InViewPortAppearance>
+					<InViewPortAppearance>
+						<ReactMarkdown remarkPlugins={[remarkGfm]}>
+							{qualificationMd}
+						</ReactMarkdown>
+					</InViewPortAppearance>
+				</div>
 			</div>
 		</motion.div>
 	);

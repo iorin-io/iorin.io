@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ja">
-			<body className={`${background}`}>{children}</body>
+			<body className={`${background}  ${css({ color: "#2F6F5E" })}`}>
+				{children}
+			</body>
 		</html>
 	);
 }

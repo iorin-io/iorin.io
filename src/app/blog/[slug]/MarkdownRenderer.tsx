@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { css } from "../../../../styled-system/css";
-import { Kiwi_Maru } from "next/font/google";
+import { Inknut_Antiqua, Kiwi_Maru } from "next/font/google";
 import remarkGfm from "remark-gfm";
 import matter from "gray-matter";
 
@@ -13,20 +13,26 @@ const Kiwi400 = Kiwi_Maru({
 	subsets: ["latin"],
 });
 
-const containerCss = css({
-	fontSize: {
-		sm: "16px",
-		base: "14px",
-	},
-	lineHeight: "24px",
-	margin: "0 auto",
-	maxWidth: "800px",
-	padding: "24px",
-	color: "#2F6F5E",
+const Inknut400 = Inknut_Antiqua({
+	weight: "400",
+	subsets: ["latin"],
 });
 
+const containerCss = css({
+	margin: "0 auto",
+	maxWidth: "800px",
+	padding: "32px",
+});
+
+const pageTitleCss = css({
+	fontSize: {
+		sm: "48px",
+		base: "32px",
+	},
+	marginTop: "24px",
+	marginBottom: "32px",
+});
 const markdownStyles = css({
-	paddingLeft: "10px",
 	"& h1": {
 		fontSize: "28px",
 		marginBottom: "16px",
@@ -50,8 +56,7 @@ const markdownStyles = css({
 	"& p": {
 		fontSize: "16px",
 		marginBottom: "16px",
-		lineHeight: "1.6",
-		paddingLeft: "10px",
+		lineHeight: "2",
 		"& img": {
 			display: "block",
 			margin: "16px auto",
@@ -62,14 +67,17 @@ const markdownStyles = css({
 	"& ul": {
 		paddingLeft: "24px",
 		listStyleType: "disc",
+		lineHeight: "2",
 	},
 	"& ol": {
 		paddingLeft: "24px",
 		listStyleType: "decimal",
+		lineHeight: "2",
 	},
 	"& a": {
 		textDecoration: "underline",
 		"&:hover": {},
+		lineHeight: "2",
 	},
 	"& pre": {
 		backgroundColor: "#f5f5f5",
@@ -183,6 +191,7 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 			transition={{ duration: 0.5 }}
 			className={`${Kiwi400.className} ${containerCss}`}
 		>
+			<h1 className={`${pageTitleCss} ${Inknut400.className}`}>Blog</h1>
 			<div className={css({ marginBottom: "16px" })}>
 				{metadata.title && (
 					<h1
@@ -205,7 +214,10 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 					</p>
 				)}
 			</div>
-			<ReactMarkdown remarkPlugins={[remarkGfm]} className={markdownStyles}>
+			<ReactMarkdown
+				remarkPlugins={[remarkGfm]}
+				className={`${markdownStyles} ${css({ paddingLeft: "10px" })}`}
+			>
 				{markdownContent}
 			</ReactMarkdown>
 		</motion.div>
