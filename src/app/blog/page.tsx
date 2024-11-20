@@ -5,6 +5,7 @@ import { css } from "../../../styled-system/css";
 import { Kiwi_Maru, Inknut_Antiqua } from "next/font/google";
 import { motion } from "framer-motion";
 import { OnClickSpan } from "../../components/OnClickSpan";
+import { containerCss, pageTitleCss } from "@/const/css";
 
 const Kiwi400 = Kiwi_Maru({
 	weight: "400",
@@ -14,25 +15,6 @@ const Kiwi400 = Kiwi_Maru({
 const Inknut400 = Inknut_Antiqua({
 	weight: "400",
 	subsets: ["latin"],
-});
-
-const containerCss = css({
-	fontSize: {
-		sm: "22.4px",
-		base: "14px",
-	},
-	margin: "0 auto",
-	maxWidth: "800px",
-	padding: "32px",
-});
-
-const pageTitleCss = css({
-	fontSize: {
-		sm: "48px",
-		base: "32px",
-	},
-	marginTop: "24px",
-	marginBottom: "32px",
 });
 
 const ulCss = css({
