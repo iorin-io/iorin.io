@@ -21,19 +21,18 @@ const containerCss = css({
 		sm: "22.4px",
 		base: "14px",
 	},
-	lineHeight: "25.6px",
 	margin: "0 auto",
 	maxWidth: "800px",
 	padding: "32px",
 });
 
-const h1css = css({
+const pageTitleCss = css({
 	fontSize: {
 		sm: "48px",
-		base: "28px",
+		base: "32px",
 	},
-	marginTop: "32px",
-	marginBottom: "64px",
+	marginTop: "24px",
+	marginBottom: "32px",
 });
 
 const ulCss = css({
@@ -60,7 +59,6 @@ const containerDivCss = css({
 const titleCss = css({
 	fontSize: "18px",
 	fontWeight: "bold",
-	color: "#2F6F5E",
 	marginBottom: "4px",
 	display: "block",
 });
@@ -108,10 +106,10 @@ const MarkdownRenderer = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: isExiting ? 0 : 1 }}
 			transition={{ duration: 0.5 }}
-			className={`${Kiwi400.className} ${css({ color: "#2F6F5E" })}`}
+			className={`${Kiwi400.className}`}
 		>
 			<div className={containerCss}>
-				<h1 className={`${h1css} ${Inknut400.className}`}>Blog</h1>
+				<h1 className={`${pageTitleCss} ${Inknut400.className}`}>Blog</h1>
 				<ul className={ulCss}>
 					{articles.map((article, index) => (
 						<li key={index} className={liCss}>

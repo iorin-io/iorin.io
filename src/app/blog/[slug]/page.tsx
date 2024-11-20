@@ -24,7 +24,6 @@ export default async function Page({
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "center",
-						color: "#2F6F5E",
 					})} ${Kiwi400.className}`}
 				>
 					<p>Loading...</p>
