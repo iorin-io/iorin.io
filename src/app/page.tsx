@@ -132,10 +132,10 @@ export default function Home() {
 					</BottomAppearance>
 					<BottomAppearance order={8}>
 						<OnClickSpan
-							onClick={() => handleLinkClick("/contact")}
+							onClick={() => handleLinkClick("/links")}
 							whileHover={{ scale: 1.1 }}
 						>
-							Contact
+							Links
 						</OnClickSpan>
 					</BottomAppearance>
 				</div>
