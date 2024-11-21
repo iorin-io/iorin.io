@@ -163,7 +163,7 @@ export default function Home() {
 					})}
 				>
 					<Image
-						src="/dere.png"
+						src="/dere.webp"
 						alt="iorin"
 						onClick={() => handleLinkClick("/about")}
 						width={180}
