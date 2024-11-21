@@ -234,7 +234,7 @@ export default function Home() {
 						})}
 					>
 						<Image
-							src="/dere.png"
+							src="/dere.webp"
 							alt="iorin"
 							width={180}
 							height={180}
