@@ -120,6 +120,11 @@ export default function Links() {
 							</a>
 						</li>
 						<li>
+							<a href="https://www.ultrabumbuku.dev/" rel="nofollow">
+								ウルトラぶんぶく
+							</a>
+						</li>
+						<li>
 							<a href="https://www.eka.earth/" rel="nofollow">
 								Ekasilicon
 							</a>
