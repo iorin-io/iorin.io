@@ -68,6 +68,7 @@ const markdownStyles = css({
 		paddingLeft: "24px",
 		listStyleType: "disc",
 		lineHeight: "2",
+		marginBottom: "16px",
 	},
 	"& ol": {
 		paddingLeft: "24px",
@@ -85,6 +86,9 @@ const markdownStyles = css({
 		borderRadius: "8px",
 		overflowX: "auto",
 		marginBottom: "16px",
+		"& code": {
+			padding: "0",
+		},
 	},
 	"& code": {
 		fontFamily: "monospace",
@@ -158,6 +162,21 @@ const markdownStyles = css({
 	},
 });
 
+const blogPageStyles = css({
+	"& h1": {
+		marginTop: "24px",
+	},
+	"& h2": {
+		marginTop: "20px",
+	},
+	"& h3": {
+		marginTop: "16px",
+	},
+	"& p": {
+		paddingLeft: "10px",
+	},
+});
+
 const MarkdownRenderer = ({ article }: { article: string }) => {
 	const [markdownContent, setMarkdownContent] = useState("");
 	const [metadata, setMetadata] = useState<{ title?: string; date?: string }>(
@@ -168,7 +187,9 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 	useEffect(() => {
 		const fetchMarkdown = async () => {
 			try {
-				const response = await fetch(`/blog/${article}.md`);
+				const response = await fetch(`/blog/${article}.md`, {
+					cache: "force-cache",
+				});
 				if (!response.ok) {
 					throw new Error("Markdown file could not be fetched");
 				}
@@ -216,7 +237,7 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 			</div>
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm]}
-				className={`${markdownStyles} ${css({ paddingLeft: "10px" })}`}
+				className={`${markdownStyles} ${blogPageStyles} ${css({ paddingLeft: "10px" })}`}
 			>
 				{markdownContent}
 			</ReactMarkdown>

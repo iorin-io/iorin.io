@@ -83,6 +83,7 @@ const markdownStyles = css({
 		paddingLeft: "24px",
 		listStyleType: "disc",
 		lineHeight: "2",
+		marginBottom: "16px",
 	},
 	"& ol": {
 		paddingLeft: "24px",
@@ -100,6 +101,9 @@ const markdownStyles = css({
 		borderRadius: "8px",
 		overflowX: "auto",
 		marginBottom: "16px",
+		"& code": {
+			padding: "0",
+		},
 	},
 	"& code": {
 		fontFamily: "monospace",
