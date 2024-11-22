@@ -1,5 +1,10 @@
 [
   {
+    "slug": "create-blog",
+    "title": "Next.jsとMarkdownでブログを実装した",
+    "date": "2024-11-22T00:00:00.000Z"
+  },
+  {
     "slug": "site-launched",
     "title": "サイトを公開！",
     "date": "2024-11-15T00:00:00.000Z"
