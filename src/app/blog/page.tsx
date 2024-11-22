@@ -62,7 +62,7 @@ const dateCss = css({
 	marginBottom: "12px",
 });
 
-const MarkdownRenderer = () => {
+const BlogsPage = () => {
 	const [articles, setArticles] = useState<
 		{ slug: string; title: string; date: string }[]
 	>([]);
@@ -76,20 +76,20 @@ const MarkdownRenderer = () => {
 		}, 500);
 	};
 
-		const fetchArticles = async () => {
-			try {
-				const response = await fetch("/blog/blogData.json");
-				if (!response.ok) {
-					throw new Error("Failed to fetch content files");
-				}
-				const data = await response.json();
-				setArticles(data);
-			} catch (error) {
-				console.error(error);
+	const fetchArticles = async () => {
+		try {
+			const response = await fetch("/blog/blogData.json");
+			if (!response.ok) {
+				throw new Error("Failed to fetch content files");
 			}
-		};
+			const data = await response.json();
+			setArticles(data);
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
-		fetchArticles();
+	fetchArticles();
 
 	return (
 		<motion.div
@@ -128,7 +128,7 @@ const MarkdownRenderer = () => {
 export default function Page() {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
-			<MarkdownRenderer />
+			<BlogsPage />
 		</Suspense>
 	);
 }
