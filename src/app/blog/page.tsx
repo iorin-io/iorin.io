@@ -76,7 +76,6 @@ const MarkdownRenderer = () => {
 		}, 500);
 	};
 
-	useEffect(() => {
 		const fetchArticles = async () => {
 			try {
 				const response = await fetch("/blog/blogData.json");
@@ -91,7 +90,6 @@ const MarkdownRenderer = () => {
 		};
 
 		fetchArticles();
-	}, []);
 
 	return (
 		<motion.div
