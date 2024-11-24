@@ -1,5 +1,10 @@
 [
   {
+    "slug": "xcode-include-setting-error",
+    "title": "XCodeでhidapi.hをインクルードしようとしたらcwcharでエラーが出た話",
+    "date": "2024-11-24T00:00:00.000Z"
+  },
+  {
     "slug": "create-blog",
     "title": "Next.jsとMarkdownでブログを実装した",
     "date": "2024-11-22T00:00:00.000Z"
