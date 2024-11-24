@@ -37,7 +37,7 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 
 ![おしまいの画面](/blogImage/xcode-include-setting-error-cwchar-error.webp)
 
-エラー文を見るとグローバルな名前空間に関数が見当たらないよ〜と言われていま。。
+エラー文を見るとグローバルな名前空間に関数が見当たらないよ〜と言われていますね。
 
 ```sh
 /opt/homebrew/include/c++/14/cwchar:64:11 No member named 'mbstate_t' in the global namespace
