@@ -37,6 +37,49 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 
 ![おしまいの画面](/blogImage/xcode-include-setting-error-cwchar-error.webp)
 
+エラー文を見るとグローバルな名前空間に関数が見当たらないよ〜と言われていま。。
+
+```sh
+/opt/homebrew/include/c++/14/cwchar:64:11 No member named 'mbstate_t' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:141:11 No member named 'wint_t' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:143:11 No member named 'btowc' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:144:11 No member named 'fgetwc' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:145:11 No member named 'fgetws' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:146:11 No member named 'fputwc' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:147:11 No member named 'fputws' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:148:11 No member named 'fwide' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:149:11 No member named 'fwprintf' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:150:11 No member named 'fwscanf' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:151:11 No member named 'getwc' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:152:11 No member named 'getwchar' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:153:11 No member named 'mbrlen' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:154:11 No member named 'mbrtowc' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:155:11 No member named 'mbsinit' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:156:11 No member named 'mbsrtowcs' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:157:11 No member named 'putwc' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:158:11 No member named 'putwchar' in the global namespace
+
+/opt/homebrew/include/c++/14/cwchar:160:11 No member named 'swprintf' in the global namespace
+
+```
+
 # 解決方法
 
 `Header Search Paths`の指定方法が悪かったようです。
