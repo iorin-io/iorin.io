@@ -25,7 +25,7 @@ InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault
 
 `hidapi`はデフォルトでは存在せず、`brew install`したため、XCodeでパスを通してあげる必要がありました。
 
-プロジェクト設定から、`Build Settings > Search Paths > Header Search Paths`にいき、以下の値を登録しました。
+プロジェクト設定から、`Build Settings > Search Paths > Header Search Paths`にいき、以下の値を設定しました。
 
 ```
 /opt/homebrew/include	recursive
