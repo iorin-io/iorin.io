@@ -188,7 +188,7 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 		const fetchMarkdown = async () => {
 			try {
 				const response = await fetch(`/blog/${article}.md`, {
-					cache: "force-cache",
+					cache: "no-store",
 				});
 				if (!response.ok) {
 					throw new Error("Markdown file could not be fetched");
