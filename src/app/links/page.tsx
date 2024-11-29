@@ -106,7 +106,12 @@ export default function Links() {
 				</div>
 			</Section>
 			<Section title="Others">
-				<div className={css({ marginBottom: "16px" })}>
+				<div
+					className={css({
+						marginBottom: "16px",
+						"& div": { marginBottom: "10px" },
+					})}
+				>
 					<ul
 						className={css({
 							paddingLeft: "24px",
@@ -146,6 +151,7 @@ export default function Links() {
 						<img
 							src="/tsukuba-love2.png"
 							alt="つくばに住んでいます。つくばの方が、楽しいので。"
+							className={css({ width: "200px", height: "auto" })}
 						/>
 					</a>
 				</div>
