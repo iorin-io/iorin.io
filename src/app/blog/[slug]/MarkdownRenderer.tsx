@@ -187,7 +187,7 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 	useEffect(() => {
 		const fetchMarkdown = async () => {
 			try {
-				const response = await fetch(`/blog/${article}.md`);
+				const response = await fetch(`/article/${article}.md`);
 				if (!response.ok) {
 					throw new Error("Markdown file could not be fetched");
 				}
