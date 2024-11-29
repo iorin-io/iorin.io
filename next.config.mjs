@@ -5,10 +5,6 @@ const nextConfig = {
 			test: /\.md$/,
 			use: "raw-loader",
 		});
-		config.resolve.fallback = {
-			...config.resolve.fallback,
-			async_hooks: require.resolve("async_hooks"),
-		};
 		return config;
 	},
 };
