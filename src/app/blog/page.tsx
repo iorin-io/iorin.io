@@ -78,7 +78,7 @@ const BlogsPage = () => {
 	useEffect(() => {
 		const fetchArticles = async () => {
 			try {
-				const response = await fetch("/blog/blogData.json");
+				const response = await fetch("/article/blogData.json");
 				if (!response.ok) {
 					throw new Error("Failed to fetch content files");
 				}
