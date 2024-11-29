@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 
-const contentDir = path.join(process.cwd(), "public/blog");
-const outputFile = path.join(process.cwd(), "public/blog/blogData.json");
+const contentDir = path.join(process.cwd(), "public/article");
+const outputFile = path.join(process.cwd(), "public/article/blogData.json");
 
 const generateBlogData = () => {
 	const files = fs

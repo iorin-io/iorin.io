@@ -75,21 +75,22 @@ const BlogsPage = () => {
 			router.push(href);
 		}, 500);
 	};
-
-	const fetchArticles = async () => {
-		try {
-			const response = await fetch("/blog/blogData.json");
-			if (!response.ok) {
-				throw new Error("Failed to fetch content files");
+	useEffect(() => {
+		const fetchArticles = async () => {
+			try {
+				const response = await fetch("/article/blogData.json");
+				if (!response.ok) {
+					throw new Error("Failed to fetch content files");
+				}
+				const data = await response.json();
+				setArticles(data);
+			} catch (error) {
+				console.error(error);
 			}
-			const data = await response.json();
-			setArticles(data);
-		} catch (error) {
-			console.error(error);
-		}
-	};
+		};
 
-	fetchArticles();
+		fetchArticles();
+	}, []);
 
 	return (
 		<motion.div
