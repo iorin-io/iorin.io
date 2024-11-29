@@ -142,16 +142,28 @@ export default function Links() {
 					</ul>
 				</div>
 				<div>
-					<a href="https://sites.google.com/view/happy-busy/" rel="nofollow">
-						<img src="/noTime.png" alt="時間ねぇ〜" />
+					<a
+						href="https://sites.google.com/view/happy-busy/"
+						rel="nofollow"
+						className={css({ display: "inline-block" })}
+					>
+						<img
+							src="/noTime.png"
+							alt="時間ねぇ〜"
+							className={css({ maxWidth: "200px", height: "auto" })}
+						/>
 					</a>
 				</div>
 				<div>
-					<a href="https://love.tsukuba-ac.net/" rel="nofollow">
+					<a
+						href="https://love.tsukuba-ac.net/"
+						rel="nofollow"
+						className={css({ display: "inline-block" })}
+					>
 						<img
 							src="/tsukuba-love2.png"
 							alt="つくばに住んでいます。つくばの方が、楽しいので。"
-							className={css({ width: "200px", height: "auto" })}
+							className={css({ maxWidth: "200px", height: "auto" })}
 						/>
 					</a>
 				</div>
