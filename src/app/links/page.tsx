@@ -106,7 +106,12 @@ export default function Links() {
 				</div>
 			</Section>
 			<Section title="Others">
-				<div className={css({ marginBottom: "16px" })}>
+				<div
+					className={css({
+						marginBottom: "16px",
+						"& div": { marginBottom: "10px" },
+					})}
+				>
 					<ul
 						className={css({
 							paddingLeft: "24px",
@@ -117,6 +122,11 @@ export default function Links() {
 						<li>
 							<a href="https://raspi0124.dev/" rel="nofollow">
 								raspi0124
+							</a>
+						</li>
+						<li>
+							<a href="https://it4pstudio.com/" rel="nofollow">
+								iT4P
 							</a>
 						</li>
 						<li>
@@ -132,8 +142,29 @@ export default function Links() {
 					</ul>
 				</div>
 				<div>
-					<a href="https://sites.google.com/view/happy-busy/" rel="nofollow">
-						<img src="/noTime.png" alt="時間ねぇ〜" />
+					<a
+						href="https://sites.google.com/view/happy-busy/"
+						rel="nofollow"
+						className={css({ display: "inline-block" })}
+					>
+						<img
+							src="/noTime.png"
+							alt="時間ねぇ〜"
+							className={css({ maxWidth: "200px", height: "auto" })}
+						/>
+					</a>
+				</div>
+				<div>
+					<a
+						href="https://love.tsukuba-ac.net/"
+						rel="nofollow"
+						className={css({ display: "inline-block" })}
+					>
+						<img
+							src="/tsukuba-love2.png"
+							alt="つくばに住んでいます。つくばの方が、楽しいので。"
+							className={css({ maxWidth: "200px", height: "auto" })}
+						/>
 					</a>
 				</div>
 			</Section>
