@@ -120,6 +120,11 @@ export default function Links() {
 							</a>
 						</li>
 						<li>
+							<a href="https://it4pstudio.com/" rel="nofollow">
+								iT4P
+							</a>
+						</li>
+						<li>
 							<a href="https://www.ultrabumbuku.dev/" rel="nofollow">
 								ウルトラぶんぶく
 							</a>
@@ -134,6 +139,14 @@ export default function Links() {
 				<div>
 					<a href="https://sites.google.com/view/happy-busy/" rel="nofollow">
 						<img src="/noTime.png" alt="時間ねぇ〜" />
+					</a>
+				</div>
+				<div>
+					<a href="https://love.tsukuba-ac.net/" rel="nofollow">
+						<img
+							src="/tsukuba-love2.png"
+							alt="つくばに住んでいます。つくばの方が、楽しいので。"
+						/>
 					</a>
 				</div>
 			</Section>
