@@ -130,6 +130,11 @@ export default function Links() {
 							</a>
 						</li>
 						<li>
+							<a href="https://いなにわうどん.みんな/" rel="nofollow">
+								いなにわうどん
+							</a>
+						</li>
+						<li>
 							<a href="https://www.ultrabumbuku.dev/" rel="nofollow">
 								ウルトラぶんぶく
 							</a>
