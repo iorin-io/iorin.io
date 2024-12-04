@@ -135,6 +135,11 @@ export default function Links() {
 							</a>
 						</li>
 						<li>
+							<a href="https://itsu.dev/" rel="nofollow">
+								ちゅるり
+							</a>
+						</li>
+						<li>
 							<a href="https://www.ultrabumbuku.dev/" rel="nofollow">
 								ウルトラぶんぶく
 							</a>
