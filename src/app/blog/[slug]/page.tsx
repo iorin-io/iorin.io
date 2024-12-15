@@ -83,9 +83,6 @@ export async function generateMetadata({
 			siteName: "iorin.io",
 			locale: "ja_JP",
 		},
-		icons: {
-			icon: [{ url: "https://iorin.io/deresquare.webp", rel: "icon" }],
-		},
 		twitter: {
 			card: "summary_large_image",
 			title,
