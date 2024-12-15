@@ -29,9 +29,6 @@ export const metadata: Metadata = {
 		images: ["https://iorin.io/deresquare.webp"],
 		creator: "@iorin__io",
 	},
-	icons: {
-		icon: [{ url: "https://iorin.io/deresquare.webp", rel: "icon" }],
-	},
 };
 
 const background = css({
