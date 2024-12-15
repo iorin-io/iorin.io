@@ -1,6 +1,7 @@
 ---
 title: Next.jsとMarkdownでブログを実装した
 date: 2024-11-22
+description: mastAdC2024にあたりNext.jsとMarkdownでブログを実装する方法を書きました。
 ---
 
 [mastAdC2024](https://adventar.org/calendars/10425)にあたり、Next.jsとMarkdownでブログを実装しました。せっかくなので記録を残しておこうと思います。

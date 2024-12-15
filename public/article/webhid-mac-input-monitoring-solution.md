@@ -1,6 +1,7 @@
 ---
 title: "MacでWebHIDの「NotAllowedError: Failed to open the device」を解決する方法"
 date: 2024-12-16
+description: "WebHIDを使用したWebアプリでHIDデバイスを開こうとしたところ、`NotAllowedError: Failed to open the device`というエラーで詰まったので、メモがてら記録を残しました。"
 ---
 
 先日、WebHIDを使用したWebアプリでHIDデバイスを開こうとしたところ、`NotAllowedError: Failed to open the device`というエラーで詰まったので、メモがてら記録を残しておきます。
