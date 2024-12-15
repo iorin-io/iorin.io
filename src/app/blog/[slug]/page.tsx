@@ -33,9 +33,9 @@ const pageTitleCss = css({
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-	const { slug } = params;
+	const { slug } = await params;
 	const response = await fetch(`https://iorin.io/article/${slug}.md`);
 	if (!response.ok) {
 		return {
@@ -96,8 +96,14 @@ export async function generateMetadata({
 	};
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
-	const { slug } = params;
+export default async function Page({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
+
+	// const [isExiting, setIsExiting] = useState(false);
 
 	return (
 		<>
