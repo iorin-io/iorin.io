@@ -39,11 +39,11 @@ export async function generateMetadata({
 	const response = await fetch(`https://iorin.io/article/${slug}.md`);
 	if (!response.ok) {
 		return {
-			title: "記事が見つかりませんでした",
-			description: "指定された記事が見つかりませんでした。",
+			title: "iorin.io",
+			description: "iorin.io's blog",
 			openGraph: {
-				title: "記事が見つかりませんでした",
-				description: "指定された記事が見つかりませんでした。",
+				title: "iorin.io",
+				description: "iorin.io's blog",
 				url: `https://iorin.io/blog/${slug}`,
 				images: [
 					{
@@ -62,7 +62,7 @@ export async function generateMetadata({
 	console.log(data);
 
 	const title = `iorin.io | ${data?.title}`;
-	const description = data?.description || "iorin.io blog";
+	const description = data?.description || "iorin.io's blog";
 
 	return {
 		title,
