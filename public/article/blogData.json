@@ -1,5 +1,10 @@
 [
   {
+    "slug": "mastadc2024-mitou",
+    "title": "未踏ITに採択された話",
+    "date": "2024-12-22T00:00:00.000Z"
+  },
+  {
     "slug": "webhid-mac-input-monitoring-solution",
     "title": "MacでWebHIDの「NotAllowedError: Failed to open the device」を解決する方法",
     "date": "2024-12-16T00:00:00.000Z"
