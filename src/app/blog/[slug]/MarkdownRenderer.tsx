@@ -167,29 +167,6 @@ const blogPageStyles = css({
 	},
 });
 
-const footnoteStyles = css({
-	fontSize: "14px",
-	borderTop: "1px solid #e0e0e0",
-	paddingTop: "16px",
-	marginTop: "24px",
-	"& ol": {
-		paddingLeft: "20px",
-	},
-	"& li": {
-		marginBottom: "8px",
-	},
-	"& a": {
-		textDecoration: "none",
-		color: "#2F6F5E",
-		"&:hover": {
-			textDecoration: "underline",
-		},
-	},
-	"& a[aria-label='戻る']": {
-		marginLeft: "8px",
-	},
-});
-
 const MarkdownRenderer = ({ article }: { article: string }) => {
 	const [markdownContent, setMarkdownContent] = useState("");
 	const [metadata, setMetadata] = useState<{ title?: string; date?: string }>(
