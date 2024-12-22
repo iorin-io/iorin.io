@@ -6,6 +6,10 @@ import ReactMarkdown from "react-markdown";
 import { css } from "../../../../styled-system/css";
 import remarkGfm from "remark-gfm";
 import matter from "gray-matter";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeToc from "rehype-toc";
+import remarkToc from "remark-toc";
 
 const markdownStyles = css({
 	"& h1": {
@@ -150,6 +154,16 @@ const blogPageStyles = css({
 	"& p": {
 		paddingLeft: "10px",
 	},
+	"& .toc": {
+		border: "1px solid #e0e0e0",
+		padding: "16px",
+		borderRadius: "8px",
+		marginBottom: "24px",
+		backgroundColor: "#fffcf6",
+		"& ol": {
+			listStyle: "none",
+		},
+	},
 });
 
 const MarkdownRenderer = ({ article }: { article: string }) => {
@@ -207,7 +221,8 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 				)}
 			</div>
 			<ReactMarkdown
-				remarkPlugins={[remarkGfm]}
+				remarkPlugins={[remarkGfm, remarkToc]}
+				rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, rehypeToc]}
 				className={`${markdownStyles} ${blogPageStyles} ${css({ paddingLeft: "10px" })}`}
 			>
 				{markdownContent}
