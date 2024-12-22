@@ -10,6 +10,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeToc from "rehype-toc";
 import remarkToc from "remark-toc";
+import remarkRehype from "remark-rehype";
 
 const markdownStyles = css({
 	"& h1": {
@@ -166,6 +167,29 @@ const blogPageStyles = css({
 	},
 });
 
+const footnoteStyles = css({
+	fontSize: "14px",
+	borderTop: "1px solid #e0e0e0",
+	paddingTop: "16px",
+	marginTop: "24px",
+	"& ol": {
+		paddingLeft: "20px",
+	},
+	"& li": {
+		marginBottom: "8px",
+	},
+	"& a": {
+		textDecoration: "none",
+		color: "#2F6F5E",
+		"&:hover": {
+			textDecoration: "underline",
+		},
+	},
+	"& a[aria-label='戻る']": {
+		marginLeft: "8px",
+	},
+});
+
 const MarkdownRenderer = ({ article }: { article: string }) => {
 	const [markdownContent, setMarkdownContent] = useState("");
 	const [metadata, setMetadata] = useState<{ title?: string; date?: string }>(
@@ -222,7 +246,18 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 			</div>
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm, remarkToc]}
-				rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, rehypeToc]}
+				rehypePlugins={[
+					rehypeSlug,
+					rehypeAutolinkHeadings,
+					rehypeToc,
+					[
+						remarkRehype,
+						{
+							footnoteLabelTagName: "h1",
+							footnoteLabel: "脚注",
+						},
+					],
+				]}
 				className={`${markdownStyles} ${blogPageStyles} ${css({ paddingLeft: "10px" })}`}
 			>
 				{markdownContent}
