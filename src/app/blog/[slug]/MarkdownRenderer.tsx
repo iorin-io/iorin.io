@@ -164,6 +164,19 @@ const blogPageStyles = css({
 		backgroundColor: "#fffcf6",
 		"& ol": {
 			listStyle: "none",
+			paddingLeft: "15px",
+			"& .toc-level": {
+				marginBottom: "10px",
+			},
+			"& .toc-link-h1": {
+				fontSize: "18px",
+			},
+			"& .toc-link-h2": {
+				fontSize: "16px",
+			},
+			"& .toc-link-h3": {
+				fontSize: "14px",
+			},
 		},
 	},
 	"& .toc:empty": {
