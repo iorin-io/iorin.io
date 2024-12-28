@@ -1,5 +1,5 @@
 "use client";
-export const config = { runtime: 'edge' };
+export const config = { runtime: "edge" };
 
 import { css } from "../../styled-system/css";
 import { Inknut_Antiqua } from "next/font/google";
@@ -33,15 +33,6 @@ const headingCss = css({
 	fontWeight: "bold",
 });
 
-const descriptionCss = css({
-	fontSize: {
-		base: "16px",
-		sm: "20px",
-	},
-	color: "#555",
-	marginBottom: "24px",
-});
-
 const errorDetailsCss = css({
 	fontSize: {
 		base: "14px",
@@ -70,10 +61,16 @@ const buttonCss = css({
 	},
 });
 
-export default function GlobalError({error, reset,}: {  error: Error & { digest?: string }, reset: () => void}) {
+export default function GlobalError({
+	error,
+	reset,
+}: {
+	error: Error & { digest?: string };
+	reset: () => void;
+}) {
 	useEffect(() => {
-		console.error(error)
-	}, [error])
+		console.error(error);
+	}, [error]);
 	const router = useRouter();
 
 	return (
@@ -93,10 +90,7 @@ export default function GlobalError({error, reset,}: {  error: Error & { digest?
 			<button className={buttonCss} onClick={() => reset()}>
 				Try again
 			</button>
-			<button
-				className={buttonCss}
-				onClick={() => router.push("/")}
-			>
+			<button className={buttonCss} onClick={() => router.push("/")}>
 				Topページに戻る
 			</button>
 		</motion.div>
