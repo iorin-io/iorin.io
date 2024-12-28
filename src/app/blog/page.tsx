@@ -2,16 +2,12 @@
 import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { css } from "../../../styled-system/css";
-import { Kiwi_Maru, Inknut_Antiqua } from "next/font/google";
+import { Kiwi_Maru } from "next/font/google";
 import { motion } from "framer-motion";
 import { OnClickSpan } from "../../components/OnClickSpan";
+import BlogTitle from "@/components/BlogTitle";
 
 const Kiwi400 = Kiwi_Maru({
-	weight: "400",
-	subsets: ["latin"],
-});
-
-const Inknut400 = Inknut_Antiqua({
 	weight: "400",
 	subsets: ["latin"],
 });
@@ -20,15 +16,6 @@ const containerCss = css({
 	margin: "0 auto",
 	maxWidth: "800px",
 	padding: "32px",
-});
-
-const pageTitleCss = css({
-	fontSize: {
-		sm: "48px",
-		base: "32px",
-	},
-	marginTop: "24px",
-	marginBottom: "32px",
 });
 
 const ulCss = css({
@@ -100,7 +87,7 @@ const BlogsPage = () => {
 			className={`${Kiwi400.className}`}
 		>
 			<div className={containerCss}>
-				<h1 className={`${pageTitleCss} ${Inknut400.className}`}>Blog</h1>
+				<BlogTitle />
 				<ul className={ulCss}>
 					{articles.map((article, index) => (
 						<li key={index} className={liCss}>
