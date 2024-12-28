@@ -11,6 +11,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeToc from "rehype-toc";
 import remarkToc from "remark-toc";
 import remarkRehype from "remark-rehype";
+import { SiX } from "@icons-pack/react-simple-icons";
 
 const markdownStyles = css({
 	"& h1": {
@@ -211,16 +212,44 @@ const MarkdownRenderer = ({ article }: { article: string }) => {
 						{metadata.title}
 					</h1>
 				)}
-				{metadata.date && (
-					<p className={css({ fontSize: "14px", color: "#666" })}>
-						{new Date(metadata.date).toLocaleDateString("ja-JP", {
-							year: "numeric",
-							month: "long",
-							day: "numeric",
-						})}
-					</p>
-				)}
+				<div
+					className={css({
+						display: "flex",
+						flexDirection: "row",
+						justifyContent: "space-between",
+						marginRight: "10px",
+					})}
+				>
+					{metadata.date && (
+						<div>
+							<p className={css({ fontSize: "14px", color: "#666" })}>
+								{new Date(metadata.date).toLocaleDateString("ja-JP", {
+									year: "numeric",
+									month: "long",
+									day: "numeric",
+								})}
+							</p>
+						</div>
+					)}
+					<div>
+						<a
+							href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${metadata.title} | @iorin__io`)}&url=${location.href}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Twitterでシェア"
+							className={css({
+								transition: "all 0.3s ease",
+								"&:hover": {
+									transform: "scale(1.1)",
+								},
+							})}
+						>
+							<SiX size={24} />
+						</a>
+					</div>
+				</div>
 			</div>
+
 			<ReactMarkdown
 				remarkPlugins={[remarkGfm, remarkToc]}
 				rehypePlugins={[
