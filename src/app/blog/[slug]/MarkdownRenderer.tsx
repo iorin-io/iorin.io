@@ -166,6 +166,15 @@ const blogPageStyles = css({
 			listStyle: "none",
 		},
 	},
+	"& .toc:empty": {
+		display: "none",
+	},
+	"& .toc ol:empty": {
+		display: "none",
+	},
+	"& .toc:has(ol:empty)": {
+		display: "none",
+	},
 });
 
 const MarkdownRenderer = ({ article }: { article: string }) => {
