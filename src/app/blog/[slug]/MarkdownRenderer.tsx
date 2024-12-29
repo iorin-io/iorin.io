@@ -149,12 +149,18 @@ const blogPageStyles = css({
 	},
 	"& h2": {
 		marginTop: "20px",
+		marginLeft: "5px",
 	},
 	"& h3": {
 		marginTop: "16px",
+		marginLeft: "10px",
 	},
 	"& p": {
 		paddingLeft: "10px",
+		color: "#555",
+	},
+	"& a": {
+		color: "#2F6F5E",
 	},
 	"& .toc": {
 		border: "1px solid #e0e0e0",
