@@ -168,6 +168,8 @@ const blogPageStyles = css({
 		borderRadius: "8px",
 		marginBottom: "24px",
 		backgroundColor: "#fffcf6",
+		margin: "0 auto",
+		maxWidth: "550px",
 		"& ol": {
 			listStyle: "none",
 			paddingLeft: "15px",
