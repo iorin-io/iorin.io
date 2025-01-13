@@ -1,5 +1,10 @@
 [
   {
+    "slug": "discord-webhook-shell-command",
+    "title": "Discord Webhookでシェルコマンドの実行結果を通知するコマンドを作成した",
+    "date": "2025-01-13T00:00:00.000Z"
+  },
+  {
     "slug": "summary-2024",
     "title": "振り返り2024",
     "date": "2024-12-30T00:00:00.000Z"
