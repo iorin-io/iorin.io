@@ -3,3 +3,7 @@ base,
 tokens,
 recipes,
 utilities;
+
+@view-transition {
+	navigation: auto;
+}
