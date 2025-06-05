@@ -136,30 +136,13 @@ export default function WorksPage() {
 				<div
 					className={css({
 						display: "flex",
-						alignItems: "center",
+						flexDirection: "column",
+						alignItems: "end",
 						justifyContent: "flex-end",
 						gap: 4,
-						mb: 6,
 						flexWrap: "wrap",
 					})}
 				>
-					{categories.map((cat) => (
-						<button
-							key={cat}
-							onClick={() => setFilter(cat)}
-							className={cx(
-								badgeBase,
-								cat === "all"
-									? css({ bg: "gray.200", color: "gray.800" })
-									: categoryStyles[cat as Work["category"]],
-								cat === filter
-									? css({ boxShadow: "outline", fontWeight: "bold" })
-									: css({ opacity: 0.7, _hover: { opacity: 1 } }),
-							)}
-						>
-							{cat === "all" ? "すべて" : cat}
-						</button>
-					))}
 					<button
 						onClick={() => setSortAsc((prev) => !prev)}
 						className={css({
@@ -178,6 +161,38 @@ export default function WorksPage() {
 						{sortAsc ? <ArrowUpZA size={16} /> : <ArrowDownZA size={16} />}
 						{sortAsc ? "古い順" : "新しい順"}
 					</button>
+					<div
+						className={css({
+							display: "flex",
+							flexDirection: "row",
+							alignItems: "end",
+							justifyContent: "flex-end",
+							gap: {
+								sm: 4,
+								base: 1.5,
+							},
+							mb: 6,
+							flexWrap: "wrap",
+						})}
+					>
+						{categories.map((cat) => (
+							<button
+								key={cat}
+								onClick={() => setFilter(cat)}
+								className={cx(
+									badgeBase,
+									cat === "all"
+										? css({ bg: "gray.200", color: "gray.800" })
+										: categoryStyles[cat as Work["category"]],
+									cat === filter
+										? css({ boxShadow: "outline", fontWeight: "bold" })
+										: css({ opacity: 0.7, _hover: { opacity: 1 } }),
+								)}
+							>
+								{cat === "all" ? "すべて" : cat}
+							</button>
+						))}
+					</div>
 				</div>
 
 				<div className={gridStyle}>
