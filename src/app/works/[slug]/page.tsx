@@ -8,9 +8,9 @@ import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { works, type Work } from "../workData";
 import { css, cx } from "../../../../styled-system/css";
-import WorksTitle from "@/components/WorksTitle";
-import { categoryStyles } from "@/app/works/page";
-import { CategoryIcon } from "@/components/CategoryIcon";
+import WorksTitle from "../../../components/WorksTitle";
+import { categoryStyles } from "../categoryStyles";
+import { CategoryIcon } from "../../../components/CategoryIcon";
 
 const Kiwi400D = Kiwi_Maru({ weight: "400", subsets: ["latin"] });
 
