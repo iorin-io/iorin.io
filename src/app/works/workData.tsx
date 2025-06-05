@@ -1,4 +1,3 @@
-import { body, label, li, p, summary, title } from "framer-motion/client";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
