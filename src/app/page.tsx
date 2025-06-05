@@ -117,7 +117,12 @@ export default function Home() {
 						</OnClickSpan>
 					</BottomAppearance>
 					<BottomAppearance order={5}>
-						<a className={unavailableColor}>Works</a>
+						<OnClickSpan
+							onClick={() => handleLinkClick("/works")}
+							whileHover={{ scale: 1.1 }}
+						>
+							Works
+						</OnClickSpan>
 					</BottomAppearance>
 					<BottomAppearance order={6}>
 						<OnClickSpan

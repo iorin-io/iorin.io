@@ -5,7 +5,7 @@ import { css } from "../../../styled-system/css";
 import { Kiwi_Maru } from "next/font/google";
 import { motion } from "framer-motion";
 import { OnClickSpan } from "../../components/OnClickSpan";
-import BlogTitle from "@/components/BlogTitle";
+import BlogTitle from "../../components/BlogTitle";
 
 const Kiwi400 = Kiwi_Maru({
 	weight: "400",

@@ -5,7 +5,7 @@ import { css } from "../../../../styled-system/css";
 import { Kiwi_Maru } from "next/font/google";
 import matter from "gray-matter";
 import { type Metadata } from "next";
-import BlogTitle from "@/components/BlogTitle";
+import BlogTitle from "../../../components/BlogTitle";
 
 const Kiwi400 = Kiwi_Maru({
 	weight: "400",
