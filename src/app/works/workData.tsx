@@ -282,7 +282,7 @@ export const works: Work[] = [
 		year: 2024,
 		category: "開発",
 		summary: "車検・給油・メンテ情報を一元管理できる Web アプリ",
-		// cover: "autotrack.webp",
+		cover: "autotrack.webp",
 		links: [
 			{
 				label: "AutoTrack",
@@ -296,8 +296,10 @@ export const works: Work[] = [
 		],
 		body: (
 			<p>
-				COJT SW
-				コースで開発した愛車管理アプリ。自分の車の燃費はどれくらいなのか、最後にエンジンオイルを交換したのはいつなのか、過去に行ったチューニングはどんな内容だった等の情報を一元管理するためのWebアプリです。フロントエンド・バックエンド・インフラを担当しました。
+				<Link href="/works/cojt-sw-2024?from=works">
+					COJT SW コースで開発した
+				</Link>
+				愛車管理アプリ。自分の車の燃費はどれくらいなのか、最後にエンジンオイルを交換したのはいつなのか、過去に行ったチューニングはどんな内容だった等の情報を一元管理するためのWebアプリです。フロントエンド・バックエンド・インフラを担当しました。
 			</p>
 		),
 	},
