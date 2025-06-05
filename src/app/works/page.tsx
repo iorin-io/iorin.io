@@ -11,7 +11,8 @@ import Image from "next/image";
 import { css, cx } from "../../../styled-system/css";
 import { works, type Work } from "./workData";
 import { ArrowDownZA, ArrowUpZA } from "lucide-react";
-import { CategoryIcon } from "@/components/CategoryIcon";
+import { CategoryIcon } from "../../components/CategoryIcon";
+import { categoryStyles } from "../../app/works/categoryStyles";
 
 const Inknut400 = Inknut_Antiqua({ weight: "400", subsets: ["latin"] });
 const Kiwi400 = Kiwi_Maru({ weight: "400", subsets: ["latin"] });
@@ -58,15 +59,6 @@ const summaryText = css({
 	mb: 3,
 });
 const badgeBase = css({ fontSize: "xs", px: 2, py: 1, rounded: "full" });
-
-// Dynamic category colours
-export const categoryStyles: Record<Work["category"], string> = {
-	採択: css({ bg: "green.200", color: "green.800" }),
-	受賞: css({ bg: "yellow.200", color: "yellow.800" }),
-	開発: css({ bg: "purple.200", color: "purple.800" }),
-	学内活動: css({ bg: "indigo.200", color: "indigo.800" }),
-	資格: css({ bg: "red.200", color: "red.800" }),
-};
 
 interface InViewPortAppearanceProp {
 	children: ReactNode;
