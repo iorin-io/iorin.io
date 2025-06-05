@@ -5,7 +5,7 @@ import { css } from "../../../styled-system/css";
 import { motion } from "framer-motion";
 import { Inknut_Antiqua } from "next/font/google";
 import { Kiwi_Maru } from "next/font/google";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -205,7 +205,7 @@ const InViewPortAppearance: React.FC<InViewPortAppearanceProp> = ({
 };
 
 export default function Home() {
-	const router = useRouter();
+	// const router = useRouter();
 	const [isExiting, setIsExiting] = useState(false);
 
 	// const handleLinkClick = (href: string) => {
