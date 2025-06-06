@@ -7,6 +7,7 @@
   - 同　局長（2023/01~2023/12）
 - Open Hack U 2024 TOKYO　優秀賞（2024/02）
 - [株式会社 Kaizen Platform](https://kaizenplatform.co.jp/)（2024/06~）
-- [2024年度IPA未踏IT人材発掘・育成事業](https://www.ipa.go.jp/jinzai/mitou/it/2024/gaiyou-tk-3.html) 採択（2024/06~）
+- [2024年度IPA未踏IT人材発掘・育成事業](https://www.ipa.go.jp/jinzai/mitou/it/2024/gaiyou-tk-3.html) 採択（2024/06~2025/03）  
+  - [同 スーパークリエータ認定](https://www.ipa.go.jp/jinzai/mitou/koubo/career/2024/2024-supercreator-16.html)（2025/05）
 - [株式会社 TAIAN](https://taian-inc.com/) (2024/11~)
 - [Digital Nature Group](https://digitalnature.slis.tsukuba.ac.jp/2025/01/iori-takahashi/) (2024/12~)
